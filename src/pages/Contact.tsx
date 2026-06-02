@@ -1,6 +1,6 @@
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
-import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Send, MessageCircle } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { useSEO } from "../hooks/useSEO";
 
@@ -55,6 +55,18 @@ export default function Contact() {
                          <p className="text-gray-600">info@resilientvillages.org</p>
                       </div>
                    </div>
+                   
+                   <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 shrink-0">
+                         <MessageCircle className="w-5 h-5" />
+                      </div>
+                      <div>
+                         <h3 className="font-bold text-gray-900 mb-1">WhatsApp</h3>
+                         <a href="https://wa.me/263773640814" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600 transition-colors">
+                            +263 773 640814
+                         </a>
+                      </div>
+                   </div>
                 </div>
              </motion.div>
              
@@ -66,17 +78,17 @@ export default function Contact() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                          <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-700" htmlFor="firstName">First Name</label>
-                            <input id="firstName" type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="Jane" />
+                            <input id="firstName" type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="Chipo" />
                          </div>
                          <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-700" htmlFor="lastName">Last Name</label>
-                            <input id="lastName" type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="Doe" />
+                            <input id="lastName" type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="Moyo" />
                          </div>
                       </div>
                       
                       <div className="space-y-2">
                          <label className="text-sm font-medium text-gray-700" htmlFor="email">Email Address</label>
-                         <input id="email" type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="jane@example.com" />
+                         <input id="email" type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="chipo@example.com" />
                       </div>
                       
                       <div className="space-y-2">

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ChevronRight, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 import { Button } from "../ui/Button";
 
 export function Footer() {
@@ -103,11 +103,6 @@ export function Footer() {
              </div>
              
              <div className="mt-6 flex flex-col gap-3">
-               <Button asChild className="w-full bg-green-600 hover:bg-green-700 text-white border-green-600 hover:border-green-700">
-                  <a href="https://wa.me/263773640814" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                     <MessageCircle className="w-4 h-4" /> Message on WhatsApp
-                  </a>
-               </Button>
                <Button asChild className="w-full bg-primary-800 hover:bg-primary-700 text-white border border-primary-700">
                   <Link to="/contact">Partner With Us</Link>
                </Button>
