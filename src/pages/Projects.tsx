@@ -17,7 +17,17 @@ export default function Projects() {
   });
 
   useEffect(() => {
-    getProjects().then(setProjects);
+    let isMounted = true;
+    
+    getProjects()
+      .then((data) => {
+        if (isMounted) setProjects(data);
+      })
+      .catch(console.error);
+      
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (

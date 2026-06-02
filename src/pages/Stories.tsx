@@ -21,7 +21,17 @@ export default function Stories() {
 
   // Fetch the stories when the page is loaded (component mounts)
   useEffect(() => {
-    getStories().then(setStories);
+    let isMounted = true;
+    
+    getStories()
+      .then((data) => {
+        if (isMounted) setStories(data);
+      })
+      .catch(console.error);
+      
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (

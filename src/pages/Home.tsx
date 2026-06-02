@@ -23,10 +23,18 @@ export default function Home() {
     description: "Resilient Villages Zimbabwe delivers high-impact programs and long-term socio-economic solutions to vulnerable communities.",
   });
 
-  // useEffect runs once when the component first mounts.
-  // It calls our data-fetching function and updates the component's state with the result.
   useEffect(() => {
-    getPartners().then(setPartners);
+    let isMounted = true;
+    
+    getPartners()
+      .then((data) => {
+        if (isMounted) setPartners(data);
+      })
+      .catch((error) => console.error("Failed to fetch partners", error));
+      
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (

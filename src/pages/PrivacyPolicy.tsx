@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
     <main className="flex-1 bg-gray-50">
       <PageHeader 
         title="Privacy Policy" 
-        subtitle="How we collect, use, and protect your data" 
+        description="How we collect, use, and protect your data" 
       />
       
       <section className="py-16 md:py-24">

@@ -12,7 +12,7 @@ export default function TermsOfService() {
     <main className="flex-1 bg-gray-50">
       <PageHeader 
         title="Terms of Service" 
-        subtitle="Rules and guidelines for using our website" 
+        description="Rules and guidelines for using our website" 
       />
       
       <section className="py-16 md:py-24">

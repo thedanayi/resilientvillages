@@ -22,14 +22,24 @@ export default function StoryDetail() {
   // State to manage the loading indicator while fetching data
   const [loading, setLoading] = useState(true);
 
-  // useEffect runs when the component mounts or when the 'id' parameter changes
   useEffect(() => {
-    // Fetch all stories and find the one that matches the current 'id'
+    let isMounted = true;
+    
     getStories().then((stories) => {
+      if (!isMounted) return;
       const foundStory = stories.find((s) => s.id === id);
       setStory(foundStory || null);
       setLoading(false); // Turn off loading state once data is resolved
+    }).catch(error => {
+      if (isMounted) {
+        console.error("Failed to fetch story details:", error);
+        setLoading(false);
+      }
     });
+
+    return () => {
+      isMounted = false;
+    };
   }, [id]);
 
   useSEO({

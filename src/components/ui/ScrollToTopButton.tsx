@@ -9,19 +9,21 @@ export function ScrollToTopButton() {
   // State to track if the button should be visible (true when user scrolled down)
   const [isVisible, setIsVisible] = useState(false);
 
-  // Effect to listen for scroll events and update visibility state
   useEffect(() => {
+    let ticking = false;
+    
     const toggleVisibility = () => {
-      // If window is scrolled down 300px or more, show the button
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsVisible(window.scrollY > 300);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
     // Listen to scroll events on the window
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
 
     // Clean up event listener when component unmounts
     return () => window.removeEventListener("scroll", toggleVisibility);

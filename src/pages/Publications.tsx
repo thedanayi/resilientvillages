@@ -1,5 +1,5 @@
 import { Image } from "../components/ui/Image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
 import { FileDown, Search, Filter } from "lucide-react";
@@ -19,16 +19,32 @@ export default function Publications() {
   });
 
   useEffect(() => {
-    getPublications().then(setPublications);
+    let isMounted = true;
+    
+    getPublications().then(data => {
+      if (isMounted) {
+        setPublications(data);
+      }
+    }).catch(error => {
+      console.error("Failed to fetch publications:", error);
+    });
+    
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  const categories = ["All", ...Array.from(new Set(publications.map(p => p.category)))];
+  const categories = useMemo(() => {
+    return ["All", ...Array.from(new Set(publications.map(p => p.category)))];
+  }, [publications]);
 
-  const filteredPublications = publications.filter(pub => {
-    const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase()) || pub.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = activeCategory === "All" || pub.category === activeCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredPublications = useMemo(() => {
+    return publications.filter(pub => {
+      const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase()) || pub.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = activeCategory === "All" || pub.category === activeCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [publications, searchTerm, activeCategory]);
 
   return (
     <div className="flex flex-col w-full">

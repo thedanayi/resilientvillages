@@ -18,7 +18,16 @@ export default function Programs() {
   });
 
   useEffect(() => {
-    getPrograms().then(setPrograms);
+    let isMounted = true;
+    getPrograms()
+      .then((data) => {
+        if (isMounted) setPrograms(data);
+      })
+      .catch((err) => console.error("Failed to load programs:", err));
+      
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (
