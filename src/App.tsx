@@ -12,6 +12,7 @@ import Projects from "./pages/Projects";
 import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
 import Stories from "./pages/Stories";
+import StoryDetail from "./pages/StoryDetail";
 import Publications from "./pages/Publications";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="impact" element={<Impact />} />
           <Route path="stories" element={<Stories />} />
+          <Route path="stories/:id" element={<StoryDetail />} />
           <Route path="publications" element={<Publications />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<div className="container py-32 text-center font-heading text-2xl text-primary-900">Page Not Found</div>} />

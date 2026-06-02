@@ -26,6 +26,19 @@ export const stories: Story[] = [
     quote: "Water is life. Now that the water is here, right in our village, our daughters are back in school and our children are healthy.",
     img: "https://images.unsplash.com/photo-1498020359781-ccaf40989f5c?q=80&w=1000&auto=format&fit=crop",
     date: "2025-08-22"
+  },
+  {
+    id: "empowering-rural-women",
+    title: "The Plight of Rural Women: Why Empowerment is the Key to Development",
+    beneficiary: "Rural Women & Children",
+    location: "Global & Zimbabwe",
+    summary: "Women and children form the backbone of rural economies, yet they face disproportionate challenges. Discover why empowering them transforms entire communities.",
+    challenge: "According to the UN Food and Agriculture Organization, women make up over 40% of the agricultural labor force in developing countries, and up to 50% in sub-Saharan Africa. Despite this, women and children disproportionately bear the brunt of rural poverty. They perform the vast majority of unpaid manual labor, including traveling long distances for water, firewood, and healthcare. UN Women reports that women do 2.5 to 3 times more unpaid care work than men, bearing the primary responsibility for the sick and disabled. When political disturbances, droughts, or famines strike, women and children are severely affected, facing heightened risks.",
+    solution: "Addressing these systemic inequalities requires targeted interventions. By providing rural communities with accessible clean water infrastructure (WASH) and climate-smart agricultural resources, we can eliminate the need for women and girls to walk hours each day for basic survival needs. Investing in localized healthcare access, education, and economic cooperatives shifts the paradigm from survival to opportunity.",
+    outcome: "Empowering women is the most powerful tool for sustainable rural development. When women have access to education, health, and economic opportunities, the benefits multiply across the entire community. Girls return to school, household nutrition improves, and women lead the charge in building resilient villages capable of withstanding climate and economic shocks.",
+    quote: "Empowering rural women is not just a moral imperative; it is the most powerful tool we have for sustainable rural development.",
+    img: "https://images.unsplash.com/photo-1596422846543-75c6ff1976f4?q=80&w=1000&auto=format&fit=crop",
+    date: "2026-06-02"
   }
 ];
 

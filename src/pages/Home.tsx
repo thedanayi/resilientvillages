@@ -129,19 +129,19 @@ export default function Home() {
                     title: "Climate-Smart Agriculture",
                     desc: "Equipping communities with modern farming techniques to combat climate change, ensuring food security and nutrition.",
                     icon: Leaf,
-                    img: "https://images.unsplash.com/photo-1592686884488-81df68153406?q=80&w=800&auto=format&fit=crop"
+                    img: "/images/Climate Smart Agriculture.jpg"
                  },
                  {
                     title: "Water & Sanitation (WASH)",
                     desc: "Providing access to clean, safe drinking water and hygiene facilities, significantly reducing waterborne diseases.",
                     icon: Droplets,
-                    img: "https://images.unsplash.com/photo-1498020359781-ccaf40989f5c?q=80&w=800&auto=format&fit=crop"
+                    img: "/images/water and sanitation1.jpeg"
                  },
                  {
                     title: "Basic Education",
                     desc: "Supporting vulnerable children and youth with access to quality education, laying the foundation for a brighter future.",
                     icon: BookOpen,
-                    img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop"
+                    img: "/images/basic education.jpeg"
                  }
                ].map((program, i) => (
                   <motion.div 
