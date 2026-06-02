@@ -11,7 +11,7 @@ export const stories: Story[] = [
     solution: "With the introduction of the Munhande Nutrition Garden and solar-powered irrigation, Chipo received a plot and training in climate-smart agriculture, focusing on drought-resistant vegetables.",
     outcome: "Today, Chipo harvests tomatoes, kale, and onions year-round. Her family enjoys a diverse, nutritious diet. 'I not only feed my family,' she says, 'but I sell the surplus at the local market to pay for my daughter's school fees.'",
     quote: "Before the nutrition garden, our harvests were unpredictable. Now, we not only feed our families year-round but sell the surplus to pay for school fees.",
-    img: "https://images.unsplash.com/photo-1542810634-71277d95dc8c?q=80&w=1000&auto=format&fit=crop",
+    img: "/images/reaping life from dry earth.jpg",
     date: "2025-10-14"
   },
   {
@@ -24,7 +24,7 @@ export const stories: Story[] = [
     solution: "RVZ partnered with the community to drill a deep solar-powered borehole and install a 10,000-liter storage tank right in the village center.",
     outcome: "Cases of dysentery and cholera dropped by 80% within the first year. Girls now have time to attend school regularly, and women have formed a cooperative to start small businesses with their reclaimed time.",
     quote: "Water is life. Now that the water is here, right in our village, our daughters are back in school and our children are healthy.",
-    img: "https://images.unsplash.com/photo-1498020359781-ccaf40989f5c?q=80&w=1000&auto=format&fit=crop",
+    img: "/images/the gift of clean water.jpeg",
     date: "2025-08-22"
   },
   {
@@ -37,7 +37,7 @@ export const stories: Story[] = [
     solution: "Addressing these systemic inequalities requires targeted interventions. By providing rural communities with accessible clean water infrastructure (WASH) and climate-smart agricultural resources, we can eliminate the need for women and girls to walk hours each day for basic survival needs. Investing in localized healthcare access, education, and economic cooperatives shifts the paradigm from survival to opportunity.",
     outcome: "Empowering women is the most powerful tool for sustainable rural development. When women have access to education, health, and economic opportunities, the benefits multiply across the entire community. Girls return to school, household nutrition improves, and women lead the charge in building resilient villages capable of withstanding climate and economic shocks.",
     quote: "Empowering rural women is not just a moral imperative; it is the most powerful tool we have for sustainable rural development.",
-    img: "https://images.unsplash.com/photo-1596422846543-75c6ff1976f4?q=80&w=1000&auto=format&fit=crop",
+    img: "/images/the plight of rural women.jpeg",
     date: "2026-06-02"
   }
 ];

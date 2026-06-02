@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Leaf, Droplets, BookOpen, HeartHandshake, ChevronRight } from "lucide-react";
+import { ArrowRight, Leaf, Droplets, BookOpen, HeartHandshake, ChevronRight, Globe2, TreePine, Sprout } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
@@ -233,15 +233,25 @@ export default function Home() {
                <p className="text-gray-600">Together, we build lasting change. We are proud to collaborate with organizations committed to rural development.</p>
             </div>
             
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 hover:opacity-100 transition-opacity duration-500">
-               {partners.length > 0 ? partners.map((partner) => (
-                  <img 
-                     key={partner.id} 
-                     src={partner.logoUrl} 
-                     alt={partner.name} 
-                     className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                  />
-               )) : (
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+               {partners.length > 0 ? partners.map((partner) => {
+                  let Icon = Globe2;
+                  if (partner.id === 'partner-2') Icon = Droplets;
+                  if (partner.id === 'partner-3') Icon = TreePine;
+                  if (partner.id === 'partner-4') Icon = Sprout;
+
+                  return (
+                     <div 
+                        key={partner.id} 
+                        className="flex items-center gap-3 text-gray-400 hover:text-primary-800 transition-colors duration-300 cursor-pointer"
+                     >
+                        <Icon className="w-8 h-8 md:w-10 md:h-10" />
+                        <span className="font-heading font-bold text-xl md:text-2xl tracking-tight">
+                           {partner.name}
+                        </span>
+                     </div>
+                  );
+               }) : (
                  <p className="text-gray-400">Loading partners...</p>
                )}
             </div>

@@ -121,7 +121,7 @@ export default function About() {
                 {[
                   { name: "Stella Gaihai Khumalo", role: "Chairperson", img: "/images/Stella Gaihai Khumalo - Chairperson.jpg" },
                   { name: "Tambudzai Maria Mushayi", role: "Vice Secretary", img: "/images/Tambudzai Maria Mushayi - Vice Secretary.jpeg" },
-                  { name: "Anthont T Chirape", role: "Board Member", img: "/images/Anthont T Chirape - Board Member.jpeg" },
+                  { name: "Anthony T Chirape", role: "Board Member", img: "/images/Anthont T Chirape - Board Member.jpeg" },
                   { name: "Modester Mutero", role: "Secretary", img: "/images/Modester Mutero - Secretary.jpg" },
                   { name: "Rabson Mutumhe", role: "Treasurer", img: "/images/Rabson Mutumhe - Treasurer.jpg" }
                 ].map((member, i) => (
