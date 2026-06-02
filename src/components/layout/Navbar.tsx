@@ -52,8 +52,8 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group" aria-label="Resilient Villages Zimbabwe Home">
-            <Image src="/images/logo.jpeg" alt="Resilient Villages Zimbabwe Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain rounded" />
-            <span className="font-heading font-bold text-xl md:text-2xl tracking-tighter text-gray-900 flex gap-1 items-baseline">
+            <Image src="/images/logo.jpeg" alt="Resilient Villages Zimbabwe Logo" className="w-12 h-12 md:w-14 md:h-14 shrink-0 object-contain rounded" />
+            <span className="font-heading font-bold text-xl md:text-2xl tracking-tighter text-gray-900 flex flex-wrap gap-1 items-baseline">
               <span>Resilient</span>
               <span>Villages</span>
               <span className="text-primary-700">Zimbabwe</span>

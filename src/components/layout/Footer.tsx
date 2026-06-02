@@ -9,12 +9,12 @@ export function Footer() {
   return (
     <footer className="bg-primary-950 text-white pt-20 pb-10 border-t border-primary-900">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-4 pr-0 lg:pr-8">
             <Link to="/" className="flex items-center gap-2 mb-6 group" aria-label="Resilient Villages Zimbabwe Home">
-              <Image src="/images/logo.jpeg" alt="Resilient Villages Zimbabwe Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain rounded bg-white p-0.5" />
-              <span className="font-heading font-bold text-2xl tracking-tighter text-white flex gap-1 items-baseline">
+              <Image src="/images/logo.jpeg" alt="Resilient Villages Zimbabwe Logo" className="w-12 h-12 md:w-14 md:h-14 shrink-0 object-contain rounded bg-white p-0.5" />
+              <span className="font-heading font-bold text-xl lg:text-2xl tracking-tighter text-white flex flex-wrap gap-1 items-baseline">
                 <span>Resilient</span>
                 <span>Villages</span>
                 <span className="text-primary-400">Zimbabwe</span>
@@ -39,7 +39,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="font-heading font-semibold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-4">
               {[
@@ -60,7 +60,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="lg:col-span-3">
             <h3 className="font-heading font-semibold text-lg mb-6">Our Focus Areas</h3>
             <ul className="space-y-4">
               {[
@@ -78,7 +78,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="lg:col-span-3">
              <h3 className="font-heading font-semibold text-lg mb-6">Contact & Newsletter</h3>
              <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3 text-primary-200 text-sm">
