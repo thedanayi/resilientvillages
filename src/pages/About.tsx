@@ -57,21 +57,29 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section Placeholder */}
+      {/* Team Section */}
       <section className="py-20 bg-gray-50">
-         <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl">
-             <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">Our Leadership & Governance</h2>
-             <p className="text-gray-600 text-lg leading-relaxed mb-12">
-               RVZ is guided by a Board of Directors committed to transparency, accountability, and the long-term success of our beneficiary communities. Our executive team brings decades of experience in development, agriculture, and public health.
-             </p>
-             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="flex flex-col items-center">
-                     <div className="w-32 h-32 bg-gray-200 rounded-full mb-4 overflow-hidden">
-                        <img src={`https://i.pravatar.cc/300?img=${i + 10}`} alt="Team member" className="w-full h-full object-cover" />
+         <div className="container mx-auto px-4 md:px-6 text-center">
+             <div className="max-w-4xl mx-auto">
+               <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">Our Leadership & Governance</h2>
+               <p className="text-gray-600 text-lg leading-relaxed mb-12">
+                 RVZ is guided by a Board of Directors committed to transparency, accountability, and the long-term success of our beneficiary communities. Our executive team brings decades of experience in development, agriculture, and public health.
+               </p>
+             </div>
+             <div className="flex flex-wrap justify-center gap-12">
+                {[
+                  { name: "Stella Gaihai Khumalo", role: "Chairperson", img: "/images/Stella Gaihai Khumalo - Chairperson.jpg" },
+                  { name: "Tambudzai Maria Mushayi", role: "Vice Secretary", img: "/images/Tambudzai Maria Mushayi - Vice Secretary.jpeg" },
+                  { name: "Anthont T Chirape", role: "Board Member", img: "/images/Anthont T Chirape - Board Member.jpeg" },
+                  { name: "Modester Mutero", role: "Secretary", img: "/images/Modester Mutero - Secretary.jpg" },
+                  { name: "Rabson Mutumhe", role: "Treasurer", img: "/images/Rabson Mutumhe - Treasurer.jpg" }
+                ].map((member, i) => (
+                  <div key={i} className="flex flex-col items-center max-w-[240px]">
+                     <div className="w-48 h-48 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-md">
+                        <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
                      </div>
-                     <h4 className="font-heading font-bold text-gray-900">Board Member</h4>
-                     <p className="text-primary-600 text-sm">RVZ Governance</p>
+                     <h4 className="text-lg font-heading font-bold text-gray-900 mb-1">{member.name}</h4>
+                     <p className="text-primary-600 font-medium">{member.role}</p>
                   </div>
                 ))}
              </div>

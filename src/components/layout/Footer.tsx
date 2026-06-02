@@ -94,7 +94,14 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-primary-900 flex flex-col md:flex-row items-center justify-between gap-4 text-primary-300 text-sm">
-           <p>&copy; {currentYear} Resilient Villages Zimbabwe. All rights reserved.</p>
+           <div className="flex flex-col gap-1 items-center md:items-start">
+             <p>&copy; {currentYear} Resilient Villages Zimbabwe. All rights reserved.</p>
+             <p>
+               <a href="https://www.blackbelt.design" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                 Website by Blackbelt Design Studio
+               </a>
+             </p>
+           </div>
            <div className="flex items-center gap-6">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

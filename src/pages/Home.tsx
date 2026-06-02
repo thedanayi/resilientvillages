@@ -191,9 +191,16 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl"
+                  className="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl bg-black"
                >
-                  <img src="https://images.unsplash.com/photo-1542810634-71277d95dc8c?q=80&w=1000&auto=format&fit=crop" alt="Local farmer" className="w-full h-full object-cover" />
+                  <iframe 
+                     className="w-full h-full absolute top-0 left-0"
+                     src="https://www.youtube.com/embed/2AKqVo2AT8A?rel=0" 
+                     title="YouTube video player" 
+                     frameBorder="0" 
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                     allowFullScreen
+                  ></iframe>
                </motion.div>
             </div>
          </div>
