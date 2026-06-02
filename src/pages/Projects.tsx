@@ -1,3 +1,4 @@
+import { Image } from "../components/ui/Image";
 import { useEffect, useState } from "react";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
@@ -38,7 +39,7 @@ export default function Projects() {
                  className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col md:flex-row hover:shadow-md transition-shadow"
                >
                  <div className="md:w-2/5 h-64 md:h-auto relative">
-                    <img src={project.img} alt={project.title} className="w-full h-full object-cover" />
+                    <Image src={project.img} alt={project.title} className="w-full h-full object-cover" />
                     <div className="absolute top-4 left-4 flex flex-col gap-2">
                        <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-800 flex items-center shadow-sm">
                           <MapPin className="w-3 h-3 mr-1" /> {project.location}

@@ -1,5 +1,18 @@
 import { Program } from '../types';
 
+/**
+ * MIGRATION TO NEXT.JS & SANITY CMS:
+ * When migrating to Next.js App Router, you can call `await getPrograms()` directly within your Server Components.
+ * 
+ * Example Sanity CMS GROQ query replacement:
+ * 
+ * export async function getPrograms(): Promise<Program[]> {
+ *   return await client.fetch(`*[_type == "program"] {
+ *     _id, title, description, outcomes, "img": image.asset->url
+ *   }`);
+ * }
+ */
+
 export const programs: Program[] = [
   {
     id: "climate-agriculture",

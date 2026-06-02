@@ -1,3 +1,4 @@
+import { Image } from "../components/ui/Image";
 import { useEffect, useState } from "react";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
@@ -39,7 +40,7 @@ export default function Programs() {
                       className="w-full lg:w-1/2"
                    >
                       <div className="relative rounded-3xl overflow-hidden shadow-lg h-[400px]">
-                         <img src={program.img} alt={program.title} className="w-full h-full object-cover" />
+                         <Image src={program.img} alt={program.title} className="w-full h-full object-cover" />
                       </div>
                    </motion.div>
                    

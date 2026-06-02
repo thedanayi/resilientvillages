@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Image } from "./Image";
 
 interface PageHeaderProps {
   title: string;
@@ -11,10 +12,11 @@ export function PageHeader({ title, description, image }: PageHeaderProps) {
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-primary-950 overflow-hidden">
       {image && (
         <div className="absolute inset-0 w-full h-full">
-           <img 
+           <Image 
               src={image} 
               alt={title} 
               className="w-full h-full object-cover opacity-20 select-none pointer-events-none"
+              loading="eager"
            />
            <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/80 to-transparent" />
         </div>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 import { Button } from "../ui/Button";
+import { Image } from "../ui/Image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,8 +12,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6 group">
-              <img src="/images/logo.jpeg" alt="Resilient Villages Zimbabwe Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain rounded bg-white p-0.5" />
+            <Link to="/" className="flex items-center gap-2 mb-6 group" aria-label="Resilient Villages Zimbabwe Home">
+              <Image src="/images/logo.jpeg" alt="Resilient Villages Zimbabwe Logo" className="w-12 h-12 md:w-14 md:h-14 object-contain rounded bg-white p-0.5" />
               <span className="font-heading font-bold text-2xl tracking-tighter text-white flex gap-1 items-baseline">
                 <span>Resilient</span>
                 <span>Villages</span>

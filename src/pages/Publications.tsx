@@ -1,3 +1,4 @@
+import { Image } from "../components/ui/Image";
 import { useEffect, useState } from "react";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
@@ -80,7 +81,7 @@ export default function Publications() {
                 >
                    {pub.img && (
                      <div className="h-48 overflow-hidden relative">
-                       <img src={pub.img} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                       <Image src={pub.img} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-800">
                           {pub.year}
                        </div>

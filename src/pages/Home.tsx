@@ -1,3 +1,4 @@
+import { Image } from "../components/ui/Image";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Leaf, Droplets, BookOpen, HeartHandshake, ChevronRight, Globe2, TreePine, Sprout } from "lucide-react";
@@ -5,6 +6,7 @@ import { Button } from "../components/ui/Button";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { SupportCTA } from "../components/ui/SupportCTA";
+
 import { Partner } from "../types";
 import { getPartners } from "../data/partners";
 
@@ -33,12 +35,13 @@ export default function Home() {
         Hero Section: 
         The top banner of the website, containing a background image, a gradient overlay, and a clear call-to-action (CTA).
       */}
-      <section className="relative w-full min-h-[90vh] flex items-center bg-primary-950 overflow-hidden">
+      <section className="relative w-full min-h-[90vh] flex items-center bg-primary-950 overflow-hidden" aria-labelledby="hero-heading">
         <div className="absolute inset-0 w-full h-full">
-           <img 
+           <Image 
               src="https://images.unsplash.com/photo-1531206715517-5c0ba140b4b8?q=80&w=2940&auto=format&fit=crop" 
               alt="Community working together" 
               className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
+              loading="eager"
            />
            {/* A gradient overlay makes text easier to read against the background image */}
            <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/80 to-transparent" />
@@ -55,7 +58,7 @@ export default function Home() {
                  <span className="inline-block py-1 px-3 rounded-full bg-primary-800/80 border border-primary-700 text-primary-200 text-sm font-medium mb-6">
                     Empowering Communities in Zimbabwe
                  </span>
-                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6">
+                 <h1 id="hero-heading" className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-white leading-tight mb-6">
                     Building Resilience, <br className="hidden md:block"/> Transforming Lives.
                  </h1>
               </motion.div>
@@ -165,8 +168,8 @@ export default function Home() {
                      className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow group flex flex-col h-full"
                   >
                      <div className="relative h-56 overflow-hidden">
-                        <img src={program.img} alt={program.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                        <div className="absolute top-4 left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary-600 shadow-sm">
+                        <Image src={program.img} alt={program.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                        <div className="absolute top-4 left-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary-600 shadow-sm" aria-hidden="true">
                            <program.icon className="w-5 h-5" />
                         </div>
                      </div>

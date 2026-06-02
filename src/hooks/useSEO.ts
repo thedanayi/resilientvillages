@@ -9,6 +9,9 @@ interface SEOProps {
 
 export function useSEO({ title, description, image, url }: SEOProps) {
   useEffect(() => {
+    // Keep track of the elements we create so we can clean them up if needed
+    // In an SPA, it is often better to just reuse existing tags
+    
     // Standard Title
     document.title = `${title} | Resilient Villages Zimbabwe`;
 
@@ -20,6 +23,7 @@ export function useSEO({ title, description, image, url }: SEOProps) {
         document.head.appendChild(element);
       }
       element.setAttribute('content', content);
+      return element;
     };
 
     if (description) {
@@ -42,5 +46,12 @@ export function useSEO({ title, description, image, url }: SEOProps) {
 
     setMetaTag('property', 'og:type', 'website');
     setMetaTag('name', 'twitter:card', 'summary_large_image');
+    
+    // We intentionally don't remove tags on unmount in this SPA approach,
+    // to prevent flickering when transitioning between routes.
+    // The next route's useSEO will automatically overwrite the existing tags.
+    // However, if we migrate to Next.js, this entire hook will be replaced by
+    // exporting the Metadata object from the page.
   }, [title, description, image, url]);
 }
+

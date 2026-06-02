@@ -1,3 +1,4 @@
+import { Image } from "../components/ui/Image";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "motion/react";
@@ -62,7 +63,7 @@ export default function StoryDetail() {
       {/* Hero Header */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-primary-950 overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
-           <img 
+           <Image 
               src={story.img} 
               alt={story.title} 
               className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
@@ -151,7 +152,7 @@ export default function StoryDetail() {
                   ) : (
                      <div className="my-12">
                         {/* Fallback to showing the article image if no video URL is provided */}
-                        <img src={story.img} alt={story.title} className="w-full rounded-2xl shadow-sm" />
+                        <Image src={story.img} alt={story.title} className="w-full rounded-2xl shadow-sm" />
                      </div>
                   )}
 

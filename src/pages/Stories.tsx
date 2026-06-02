@@ -1,3 +1,4 @@
+import { Image } from "../components/ui/Image";
 import { useEffect, useState } from "react";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
@@ -44,7 +45,7 @@ export default function Stories() {
                    className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col hover:shadow-md transition-shadow group"
                 >
                    <Link to={`/stories/${story.id}`} className="block relative h-72 overflow-hidden cursor-pointer">
-                      <img src={story.img} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                      <Image src={story.img} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-800 flex items-center shadow-sm">
                          <MapPin className="w-3 h-3 mr-1" /> {story.location}
                       </div>

@@ -1,8 +1,10 @@
+import { Image } from "../components/ui/Image";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
 import { Users, Target, Shield, History } from "lucide-react";
 import { SupportCTA } from "../components/ui/SupportCTA";
 import { useSEO } from "../hooks/useSEO";
+
 
 /**
  * About page component rendering information about the organization, history, and team.
@@ -141,7 +143,7 @@ export default function About() {
                 ].map((member, i) => (
                   <div key={i} className="flex flex-col items-center max-w-[240px]">
                      <div className="w-48 h-48 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-md">
-                        <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
+                        <Image src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
                      </div>
                      <h4 className="text-lg font-heading font-bold text-gray-900 mb-1">{member.name}</h4>
                      <p className="text-primary-600 font-medium">{member.role}</p>

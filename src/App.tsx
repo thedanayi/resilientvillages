@@ -19,6 +19,8 @@ import Contact from "./pages/Contact";
 import Stories from "./pages/Stories";
 import StoryDetail from "./pages/StoryDetail";
 import Publications from "./pages/Publications";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 /**
  * The main component of our application.
@@ -47,6 +49,8 @@ export default function App() {
           
           <Route path="publications" element={<Publications />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="privacy" element={<PrivacyPolicy />} />
+          <Route path="terms" element={<TermsOfService />} />
           
           {/* Fallback route using wildcard (*) to catch any unmatched URLs (404 Page Not Found) */}
           <Route path="*" element={<div className="container py-32 text-center font-heading text-2xl text-primary-900">Page Not Found</div>} />
