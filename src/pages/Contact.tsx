@@ -2,8 +2,14 @@ import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
 import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { Button } from "../components/ui/Button";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Contact() {
+  useSEO({
+    title: "Contact Us",
+    description: "Partner with us, ask a question, or learn how you can support Resilient Villages Zimbabwe.",
+  });
+
   return (
     <div className="flex flex-col w-full">
       <PageHeader 

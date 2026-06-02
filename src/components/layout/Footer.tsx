@@ -38,11 +38,18 @@ export function Footer() {
           <div>
             <h3 className="font-heading font-semibold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-4">
-              {['About Us', 'Our Programs', 'Projects in Action', 'Impact & Data', 'News & Stories'].map((item) => (
-                <li key={item}>
-                  <Link to={`/${item.toLowerCase().replace(/ /g, '-').replace(/&-/g, '')}`} className="text-primary-200 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+              {[
+                { name: 'About Us', href: '/about' },
+                { name: 'Our Programs', href: '/programs' },
+                { name: 'Projects in Action', href: '/projects' },
+                { name: 'Impact & Data', href: '/impact' },
+                { name: 'Success Stories', href: '/stories' },
+                { name: 'Publications', href: '/publications' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link to={item.href} className="text-primary-200 hover:text-white transition-colors text-sm flex items-center gap-2 group">
                     <ChevronRight className="w-3 h-3 text-primary-500 group-hover:translate-x-1 transition-transform" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -68,8 +75,8 @@ export function Footer() {
           </div>
 
           <div>
-             <h3 className="font-heading font-semibold text-lg mb-6">Contact</h3>
-             <ul className="space-y-4">
+             <h3 className="font-heading font-semibold text-lg mb-6">Contact & Newsletter</h3>
+             <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3 text-primary-200 text-sm">
                    <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
                    <span>Stand 28 Chaka Business Centre<br/>Mvuma, Zimbabwe</span>
@@ -84,9 +91,17 @@ export function Footer() {
                 </li>
              </ul>
              
-             <div className="mt-8">
-               <Button className="w-full bg-primary-800 hover:bg-primary-700 text-white border border-primary-700">
-                  Partner With Us
+             <div className="bg-primary-900 rounded-lg p-4 border border-primary-800">
+               <h4 className="text-sm font-semibold mb-2 text-white">Subscribe to our Updates</h4>
+               <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+                 <input type="email" placeholder="Email Address" className="w-full px-3 py-2 text-sm rounded bg-primary-950 text-white border border-primary-700 focus:outline-none focus:border-primary-500" />
+                 <Button size="sm" type="submit" className="bg-accent-600 hover:bg-accent-700 text-white shrink-0">Subscribe</Button>
+               </form>
+             </div>
+             
+             <div className="mt-6">
+               <Button asChild className="w-full bg-primary-800 hover:bg-primary-700 text-white border border-primary-700">
+                  <Link to="/contact">Partner With Us</Link>
                </Button>
              </div>
           </div>

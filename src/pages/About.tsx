@@ -1,8 +1,15 @@
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
 import { Users, Target, Shield, History } from "lucide-react";
+import { SupportCTA } from "../components/ui/SupportCTA";
+import { useSEO } from "../hooks/useSEO";
 
 export default function About() {
+  useSEO({
+    title: "About Us",
+    description: "Learn about Resilient Villages Zimbabwe, our mission, our values, and the team driving sustainable development.",
+  });
+
   return (
     <div className="flex flex-col w-full">
       <PageHeader 
@@ -11,58 +18,102 @@ export default function About() {
         image="https://images.unsplash.com/photo-1542810634-71277d95dc8c?q=80&w=2000&auto=format&fit=crop"
       />
       
-      <section className="py-20 bg-white">
+      {/* Mission & Vision (Visual Sections) */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-               <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">Our Mission</h2>
-               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                 Resilient Villages Zimbabwe (RVZ) is a registered non-profit organization focused on building resilient villages. We target high-impact sustainable programs and long-term socio-economic solutions to problems affecting villagers.
-               </p>
-               <p className="text-gray-600 text-lg leading-relaxed">
-                 We prioritize vulnerable groups including women, girls, children, the physically challenged, and youth, ensuring that our interventions lead to durable and long-lasting benefits.
-               </p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 gap-6">
-               <div className="bg-primary-50 p-6 rounded-2xl text-center">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-700">
-                     <Target className="w-6 h-6" />
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto mb-20">
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-sm font-bold mb-6">
+                    <Target className="w-4 h-4" /> Our Mission
+                 </div>
+                 <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-6">Building Resilient Communities</h2>
+                 <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                   Resilient Villages Zimbabwe (RVZ) is a registered non-profit organization dedicated to establishing high-impact, sustainable programs. We focus on long-term socio-economic solutions to problems affecting vulnerable communities.
+                 </p>
+                 <p className="text-gray-600 text-lg leading-relaxed">
+                   We prioritize women, girls, children, the physically challenged, and youth, ensuring that our interventions lead to durable and long-lasting benefits that break the cycle of poverty.
+                 </p>
+              </motion.div>
+              <motion.div 
+                 initial={{ opacity: 0, x: 20 }} 
+                 whileInView={{ opacity: 1, x: 0 }} 
+                 viewport={{ once: true }}
+                 className="relative h-96 rounded-3xl overflow-hidden shadow-xl"
+              >
+                 <img src="https://images.unsplash.com/photo-1588682855148-7359996b5278?q=80&w=1200&auto=format&fit=crop" alt="Community members" className="w-full h-full object-cover" />
+              </motion.div>
+           </div>
+           
+           {/* Values Cards */}
+           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl mx-auto">
+               <motion.div 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+                  className="bg-primary-50 p-8 rounded-3xl text-center shadow-sm"
+               >
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-primary-700 shadow-sm">
+                     <Target className="w-8 h-8" />
                   </div>
-                  <h3 className="font-heading font-bold text-gray-900 mb-2">Vision</h3>
-                  <p className="text-gray-600 text-sm">Thriving, self-sustaining communities free from poverty.</p>
-               </div>
-               <div className="bg-primary-50 p-6 rounded-2xl text-center mt-8">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-700">
-                     <Users className="w-6 h-6" />
+                  <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">Vision</h3>
+                  <p className="text-gray-600">Thriving, self-sustaining communities free from poverty and resilient to climate change.</p>
+               </motion.div>
+               <motion.div 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
+                  className="bg-primary-50 p-8 rounded-3xl text-center shadow-sm"
+               >
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-primary-700 shadow-sm">
+                     <Users className="w-8 h-8" />
                   </div>
-                  <h3 className="font-heading font-bold text-gray-900 mb-2">Values</h3>
-                  <p className="text-gray-600 text-sm">Integrity, inclusivity, and community-first development.</p>
-               </div>
-               <div className="bg-primary-50 p-6 rounded-2xl text-center -mt-8">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-700">
-                     <Shield className="w-6 h-6" />
+                  <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">Values</h3>
+                  <p className="text-gray-600">Integrity, inclusivity, community-first development, and measurable impact.</p>
+               </motion.div>
+               <motion.div 
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
+                  className="bg-primary-50 p-8 rounded-3xl text-center shadow-sm"
+               >
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 text-primary-700 shadow-sm">
+                     <Shield className="w-8 h-8" />
                   </div>
-                  <h3 className="font-heading font-bold text-gray-900 mb-2">Governance</h3>
-                  <p className="text-gray-600 text-sm">Transparent operations and accountable leadership.</p>
-               </div>
-               <div className="bg-primary-50 p-6 rounded-2xl text-center">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-700">
-                     <History className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-heading font-bold text-gray-900 mb-2">History</h3>
-                  <p className="text-gray-600 text-sm">Established to combat deep-rooted socio-economic challenges.</p>
-               </div>
-            </motion.div>
-          </div>
+                  <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">Transparency</h3>
+                  <p className="text-gray-600">Transparent operations and accountable leadership at every level of the organization.</p>
+               </motion.div>
+           </div>
         </div>
       </section>
 
+      {/* History Timeline Minimal */}
+      <section className="py-24 bg-gray-50 border-t border-gray-100">
+         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div className="text-center mb-16">
+               <h2 className="text-3xl font-heading font-bold text-gray-900 mb-4">Our Journey</h2>
+               <p className="text-lg text-gray-600">Established to combat deep-rooted socio-economic challenges.</p>
+            </div>
+            
+            <div className="space-y-12">
+               {[
+                 { year: "2018", title: "Foundation", desc: "RVZ was officially registered to respond directly to the worsening water crisis in the Chaka District." },
+                 { year: "2020", title: "Agricultural Pivot", desc: "Launched climate-smart agriculture programs to combat severe droughts and food insecurity." },
+                 { year: "2023", title: "Expanded Reach", desc: "Scaled operations to cover 48 communities, establishing the Munhande Nutrition Garden as a flagship model." }
+               ].map((item, i) => (
+                 <div key={i} className="flex flex-col sm:flex-row gap-6 items-start">
+                    <div className="sm:w-32 flex-shrink-0 pt-1">
+                       <span className="text-2xl font-heading font-bold text-primary-600">{item.year}</span>
+                    </div>
+                    <div className="flex-grow bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                       <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                       <p className="text-gray-600">{item.desc}</p>
+                    </div>
+                 </div>
+               ))}
+            </div>
+         </div>
+      </section>
+
       {/* Team Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-white">
          <div className="container mx-auto px-4 md:px-6 text-center">
-             <div className="max-w-4xl mx-auto">
-               <h2 className="text-3xl font-heading font-bold text-gray-900 mb-6">Our Leadership & Governance</h2>
-               <p className="text-gray-600 text-lg leading-relaxed mb-12">
+             <div className="max-w-4xl mx-auto mb-16">
+               <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">Our Leadership & Governance</h2>
+               <p className="text-gray-600 text-lg leading-relaxed">
                  RVZ is guided by a Board of Directors committed to transparency, accountability, and the long-term success of our beneficiary communities. Our executive team brings decades of experience in development, agriculture, and public health.
                </p>
              </div>
@@ -85,6 +136,8 @@ export default function About() {
              </div>
          </div>
       </section>
+
+      <SupportCTA />
     </div>
   );
 }

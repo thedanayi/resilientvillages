@@ -1,32 +1,24 @@
+import { useEffect, useState } from "react";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Program } from "../types";
+import { getPrograms } from "../data/programs";
+import { SupportCTA } from "../components/ui/SupportCTA";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Programs() {
-  const programs = [
-    {
-      id: "climate-agriculture",
-      title: "Climate-Smart Agriculture",
-      description: "Equipping rural farmers with sustainable techniques to adapt to climate change, ensuring food security and economic stability.",
-      outcomes: ["Increased crop yields", "Soil preservation", "Drought resilience"],
-      img: "https://images.unsplash.com/photo-1592686884488-81df68153406?q=80&w=1200&auto=format&fit=crop"
-    },
-    {
-      id: "wash",
-      title: "Water & Sanitation (WASH)",
-      description: "Providing access to clean water infrastructure and sanitation facilities to eliminate waterborne diseases in vulnerable communities.",
-      outcomes: ["Reduced disease rates", "Accessible clean water", "Improved hygiene"],
-      img: "https://images.unsplash.com/photo-1498020359781-ccaf40989f5c?q=80&w=1200&auto=format&fit=crop"
-    },
-    {
-      id: "environmental-healing",
-      title: "Leading Environmental Healing",
-      description: "Community-driven initiatives to restore degraded landscapes, plant trees, and manage natural resources sustainably.",
-      outcomes: ["Reforestation", "Erosion control", "Community management"],
-      img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop"
-    }
-  ];
+  const [programs, setPrograms] = useState<Program[]>([]);
+
+  useSEO({
+    title: "Our Programs",
+    description: "Comprehensive strategies designed to uplift communities through health, education, and sustainable agriculture.",
+  });
+
+  useEffect(() => {
+    getPrograms().then(setPrograms);
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -81,6 +73,11 @@ export default function Programs() {
           </div>
         </div>
       </section>
+
+      <SupportCTA 
+         title="Partner With Our Programs"
+         description="Your organization can sponsor specific programs and directly impact thousands of lives. Let's collaborate for a better future."
+      />
     </div>
   );
 }

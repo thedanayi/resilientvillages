@@ -1,28 +1,23 @@
+import { useEffect, useState } from "react";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
 import { MapPin, Users } from "lucide-react";
+import { Project } from "../types";
+import { getProjects } from "../data/projects";
+import { SupportCTA } from "../components/ui/SupportCTA";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Munhande Nutrition Garden Project",
-      location: "Munhande Village",
-      beneficiaries: "120 Families",
-      challenge: "Severe droughts led to chronic food insecurity and malnutrition among children.",
-      intervention: "Established a solar-powered borehole and drip irrigation system for a 2-hectare community garden.",
-      results: "Year-round vegetable production, improved household nutrition, and surplus sales paying school fees.",
-      img: "https://images.unsplash.com/photo-1592424001807-fbd77732a39a?q=80&w=800&auto=format&fit=crop"
-    },
-    {
-      title: "Water Harvesting Expansion",
-      location: "Chaka District",
-      beneficiaries: "3,500 People",
-      challenge: "Women walked up to 8km daily to fetch unsafe surface water.",
-      intervention: "Constructed 5 large-scale rainwater harvesting weirs and rehabilitated 3 community boreholes.",
-      results: "Water access reduced to under 500m. 80% reduction in waterborne disease cases at local clinics.",
-      img: "https://images.unsplash.com/photo-1541888046897-88981180cf2a?q=80&w=800&auto=format&fit=crop"
-    }
-  ];
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useSEO({
+    title: "Projects in Action",
+    description: "Explore the specific, measurable interventions we are executing on the ground to build resilient villages.",
+  });
+
+  useEffect(() => {
+    getProjects().then(setProjects);
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -36,11 +31,11 @@ export default function Projects() {
           <div className="space-y-12">
             {projects.map((project, i) => (
                <motion.div 
-                 key={i}
+                 key={project.id}
                  initial={{ opacity: 0, y: 20 }}
                  whileInView={{ opacity: 1, y: 0 }}
                  viewport={{ once: true }}
-                 className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col md:flex-row"
+                 className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col md:flex-row hover:shadow-md transition-shadow"
                >
                  <div className="md:w-2/5 h-64 md:h-auto relative">
                     <img src={project.img} alt={project.title} className="w-full h-full object-cover" />
@@ -77,6 +72,8 @@ export default function Projects() {
           </div>
         </div>
       </section>
+
+      <SupportCTA />
     </div>
   );
 }

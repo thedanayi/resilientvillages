@@ -1,9 +1,25 @@
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Leaf, Droplets, BookOpen, HeartHandshake, ChevronRight } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { Link } from "react-router-dom";
+import { useSEO } from "../hooks/useSEO";
+import { SupportCTA } from "../components/ui/SupportCTA";
+import { Partner } from "../types";
+import { getPartners } from "../data/partners";
 
 export default function Home() {
+  const [partners, setPartners] = useState<Partner[]>([]);
+
+  useSEO({
+    title: "Building Resilient Communities",
+    description: "Resilient Villages Zimbabwe delivers high-impact programs and long-term socio-economic solutions to vulnerable communities.",
+  });
+
+  useEffect(() => {
+    getPartners().then(setPartners);
+  }, []);
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
@@ -47,12 +63,14 @@ export default function Home() {
                  transition={{ duration: 0.6, delay: 0.4 }}
                  className="flex flex-col sm:flex-row gap-4"
               >
-                 <Button size="lg" className="bg-accent-600 hover:bg-accent-700 text-white border-0 text-lg group">
-                    Support Our Mission
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                 <Button size="lg" className="bg-accent-600 hover:bg-accent-700 text-white border-0 text-lg group" asChild>
+                    <Link to="/contact">
+                       Support Our Mission
+                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                  </Button>
-                 <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white text-lg">
-                    Discover Our Impact
+                 <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 hover:text-white text-lg" asChild>
+                    <Link to="/impact">Discover Our Impact</Link>
                  </Button>
               </motion.div>
            </div>
@@ -89,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* Focus Areas */}
-      <section className="py-24 bg-gray-50 border-t border-gray-100">
+      <section className="py-24 bg-gray-50 border-y border-gray-100">
          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                <div className="max-w-2xl">
@@ -181,8 +199,10 @@ export default function Home() {
                      </footer>
                   </blockquote>
                   
-                  <Button className="bg-white text-primary-900 hover:bg-gray-100 group">
-                     Read Our Success Stories <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Button className="bg-white text-primary-900 hover:bg-gray-100 group" asChild>
+                     <Link to="/stories">
+                        Read Our Success Stories <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                     </Link>
                   </Button>
                </motion.div>
                
@@ -197,7 +217,6 @@ export default function Home() {
                      className="w-full h-full absolute top-0 left-0"
                      src="https://www.youtube.com/embed/2AKqVo2AT8A?rel=0" 
                      title="YouTube video player" 
-                     frameBorder="0" 
                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                      allowFullScreen
                   ></iframe>
@@ -206,24 +225,31 @@ export default function Home() {
          </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-accent-500 relative overflow-hidden">
-         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiLz48L3N2Zz4=')] opacity-50" />
-         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary-950 mb-6">Join Us in Building Resilient Villages</h2>
-            <p className="text-xl text-primary-900 mb-10 max-w-2xl mx-auto">
-               Your partnership can help us expand our nutrition gardens, build new wells, and provide education to those who need it most.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-               <Button size="lg" className="bg-primary-900 hover:bg-primary-950 text-white text-lg px-8">
-                  Become a Partner
-               </Button>
-               <Button size="lg" variant="outline" className="border-primary-900 text-primary-950 hover:bg-primary-900 hover:text-white text-lg px-8">
-                  Make a Donation
-               </Button>
+      {/* Partners Section */}
+      <section className="py-20 bg-white">
+         <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+               <h2 className="text-3xl font-heading font-bold text-gray-900 mb-4">Our Partners</h2>
+               <p className="text-gray-600">Together, we build lasting change. We are proud to collaborate with organizations committed to rural development.</p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 hover:opacity-100 transition-opacity duration-500">
+               {partners.length > 0 ? partners.map((partner) => (
+                  <img 
+                     key={partner.id} 
+                     src={partner.logoUrl} 
+                     alt={partner.name} 
+                     className="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+               )) : (
+                 <p className="text-gray-400">Loading partners...</p>
+               )}
             </div>
          </div>
       </section>
+
+      {/* CTA Section */}
+      <SupportCTA />
     </div>
   );
 }
