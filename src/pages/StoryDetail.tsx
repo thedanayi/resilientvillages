@@ -7,16 +7,27 @@ import { getStories } from "../data/stories";
 import { SupportCTA } from "../components/ui/SupportCTA";
 import { useSEO } from "../hooks/useSEO";
 
+/**
+ * StoryDetail component dynamically displays the full content of an individual success story.
+ * It reads the 'id' from the URL parameters to fetch the matching story details.
+ */
 export default function StoryDetail() {
+  // Extract the 'id' parameter from the URL using React Router's useParams hook
   const { id } = useParams<{ id: string }>();
+  
+  // State to hold the fetched story data
   const [story, setStory] = useState<Story | null>(null);
+  
+  // State to manage the loading indicator while fetching data
   const [loading, setLoading] = useState(true);
 
+  // useEffect runs when the component mounts or when the 'id' parameter changes
   useEffect(() => {
+    // Fetch all stories and find the one that matches the current 'id'
     getStories().then((stories) => {
       const foundStory = stories.find((s) => s.id === id);
       setStory(foundStory || null);
-      setLoading(false);
+      setLoading(false); // Turn off loading state once data is resolved
     });
   }, [id]);
 
@@ -124,9 +135,25 @@ export default function StoryDetail() {
                      {story.solution}
                   </p>
 
-                  <div className="my-12">
-                     <img src={story.img} alt={story.title} className="w-full rounded-2xl shadow-sm" />
-                  </div>
+                  {/* Display video if available, otherwise show the article image */}
+                  {story.videoUrl ? (
+                     <div className="my-12 relative w-full pb-[56.25%] overflow-hidden rounded-2xl shadow-md">
+                        {/* 16:9 Aspect Ratio Container for YouTube video */}
+                        <iframe 
+                           className="absolute top-0 left-0 w-full h-full"
+                           src={story.videoUrl} 
+                           title={story.title}
+                           frameBorder="0" 
+                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                           allowFullScreen
+                        ></iframe>
+                     </div>
+                  ) : (
+                     <div className="my-12">
+                        {/* Fallback to showing the article image if no video URL is provided */}
+                        <img src={story.img} alt={story.title} className="w-full rounded-2xl shadow-sm" />
+                     </div>
+                  )}
 
                   <h3 className="text-2xl font-heading font-bold text-gray-900 mt-12 mb-4">The Impact</h3>
                   <p className="mb-8 leading-relaxed font-medium text-primary-900">

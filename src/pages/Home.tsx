@@ -8,21 +8,31 @@ import { SupportCTA } from "../components/ui/SupportCTA";
 import { Partner } from "../types";
 import { getPartners } from "../data/partners";
 
+/**
+ * The Home component represents the main landing page of the application.
+ */
 export default function Home() {
+  // State hook to store the list of partners loaded from the data source.
   const [partners, setPartners] = useState<Partner[]>([]);
 
+  // Custom hook to set the page title and meta description for Search Engine Optimization (SEO)
   useSEO({
     title: "Building Resilient Communities",
     description: "Resilient Villages Zimbabwe delivers high-impact programs and long-term socio-economic solutions to vulnerable communities.",
   });
 
+  // useEffect runs once when the component first mounts.
+  // It calls our data-fetching function and updates the component's state with the result.
   useEffect(() => {
     getPartners().then(setPartners);
   }, []);
 
   return (
     <div className="flex flex-col w-full">
-      {/* Hero Section */}
+      {/* 
+        Hero Section: 
+        The top banner of the website, containing a background image, a gradient overlay, and a clear call-to-action (CTA).
+      */}
       <section className="relative w-full min-h-[90vh] flex items-center bg-primary-950 overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
            <img 
@@ -30,11 +40,13 @@ export default function Home() {
               alt="Community working together" 
               className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
            />
+           {/* A gradient overlay makes text easier to read against the background image */}
            <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/80 to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
            <div className="max-w-3xl">
+              {/* motion.div animates elements as they render. Initial state -> animate state */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

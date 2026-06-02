@@ -29,6 +29,7 @@ export interface Story {
   outcome: string;
   quote: string;
   img: string;
+  videoUrl?: string;
   date: string;
 }
 

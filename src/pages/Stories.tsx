@@ -9,13 +9,16 @@ import { SupportCTA } from "../components/ui/SupportCTA";
 import { useSEO } from "../hooks/useSEO";
 
 export default function Stories() {
+  // State hook to store the array of stories loaded from the data source
   const [stories, setStories] = useState<Story[]>([]);
   
+  // Custom hook to set SEO meta tags reflecting the page intent
   useSEO({
     title: "Success Stories",
     description: "Read inspiring stories of community transformation and resilience from our beneficiaries in Zimbabwe.",
   });
 
+  // Fetch the stories when the page is loaded (component mounts)
   useEffect(() => {
     getStories().then(setStories);
   }, []);
@@ -40,12 +43,12 @@ export default function Stories() {
                    transition={{ delay: i * 0.1, duration: 0.5 }}
                    className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col hover:shadow-md transition-shadow group"
                 >
-                   <div className="relative h-72 overflow-hidden">
+                   <Link to={`/stories/${story.id}`} className="block relative h-72 overflow-hidden cursor-pointer">
                       <img src={story.img} alt={story.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-800 flex items-center shadow-sm">
                          <MapPin className="w-3 h-3 mr-1" /> {story.location}
                       </div>
-                   </div>
+                   </Link>
                    
                    <div className="p-8 flex flex-col flex-grow">
                       <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
@@ -53,9 +56,11 @@ export default function Stories() {
                          <span>{new Date(story.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
                       </div>
                       
-                      <h2 className="text-2xl font-heading font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
-                         {story.title}
-                      </h2>
+                      <Link to={`/stories/${story.id}`}>
+                         <h2 className="text-2xl font-heading font-bold text-gray-900 mb-4 hover:text-primary-700 group-hover:text-primary-700 transition-colors cursor-pointer">
+                            {story.title}
+                         </h2>
+                      </Link>
                       
                       <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
                          {story.summary}

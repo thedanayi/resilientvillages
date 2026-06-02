@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Resilient Villages Zimbabwe",
+  "description": "Resilient Villages Zimbabwe delivers high-impact programs and long-term socio-economic solutions to vulnerable communities.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

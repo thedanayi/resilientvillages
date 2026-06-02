@@ -4,7 +4,11 @@ import { Users, Target, Shield, History } from "lucide-react";
 import { SupportCTA } from "../components/ui/SupportCTA";
 import { useSEO } from "../hooks/useSEO";
 
+/**
+ * About page component rendering information about the organization, history, and team.
+ */
 export default function About() {
+  // Set up SEO titles and descriptions for this page
   useSEO({
     title: "About Us",
     description: "Learn about Resilient Villages Zimbabwe, our mission, our values, and the team driving sustainable development.",
@@ -12,16 +16,18 @@ export default function About() {
 
   return (
     <div className="flex flex-col w-full">
+      {/* Reusable page header component */}
       <PageHeader 
         title="About Us" 
         description="We are driven by the belief that every person in a village has the right to a dignified life."
         image="https://images.unsplash.com/photo-1542810634-71277d95dc8c?q=80&w=2000&auto=format&fit=crop"
       />
       
-      {/* Mission & Vision (Visual Sections) */}
+      {/* Mission & Vision Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto mb-20">
+              {/* motion.div is used to animate elements fading and sliding in as they scroll into view */}
               <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-sm font-bold mb-6">
                     <Target className="w-4 h-4" /> Our Mission
@@ -34,13 +40,21 @@ export default function About() {
                    We prioritize women, girls, children, the physically challenged, and youth, ensuring that our interventions lead to durable and long-lasting benefits that break the cycle of poverty.
                  </p>
               </motion.div>
+              {/* Right column: Video container. Animated to fade and slide in from the right */}
               <motion.div 
-                 initial={{ opacity: 0, x: 20 }} 
-                 whileInView={{ opacity: 1, x: 0 }} 
-                 viewport={{ once: true }}
-                 className="relative h-96 rounded-3xl overflow-hidden shadow-xl"
+                 initial={{ opacity: 0, x: 20 }} // Start slightly to the right (x: 20px) and invisible (opacity: 0)
+                 whileInView={{ opacity: 1, x: 0 }} // Animate to final position (x: 0, opacity: 1)
+                 viewport={{ once: true }} // Only trigger this animation once when scrolled into view
+                 className="relative h-96 rounded-3xl overflow-hidden shadow-xl bg-gray-100"
               >
-                 <img src="https://images.unsplash.com/photo-1588682855148-7359996b5278?q=80&w=1200&auto=format&fit=crop" alt="Community members" className="w-full h-full object-cover" />
+                 {/* YouTube Video iframe component for embedding video content */}
+                 <iframe 
+                    className="absolute inset-0 w-full h-full z-20"
+                    src="https://www.youtube.com/embed/xEGHjwrPaks?si=C6R3LnXUYS3RpPl5" 
+                    title="Resilient Villages Video - The Plight of Rural Women" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                 ></iframe>
               </motion.div>
            </div>
            

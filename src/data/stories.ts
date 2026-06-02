@@ -12,6 +12,7 @@ export const stories: Story[] = [
     outcome: "Today, Chipo harvests tomatoes, kale, and onions year-round. Her family enjoys a diverse, nutritious diet. 'I not only feed my family,' she says, 'but I sell the surplus at the local market to pay for my daughter's school fees.'",
     quote: "Before the nutrition garden, our harvests were unpredictable. Now, we not only feed our families year-round but sell the surplus to pay for school fees.",
     img: "/images/reaping life from dry earth.jpg",
+    videoUrl: "https://www.youtube.com/embed/g_lENnNs414?si=CqjfYSuoAPeb3zQ4",
     date: "2025-10-14"
   },
   {
