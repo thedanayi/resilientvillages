@@ -1,6 +1,6 @@
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
-import { FileDown, Map, Target, TrendingUp, CheckCircle2, MapPin } from "lucide-react";
+import { FileDown, Map, Target, TrendingUp, CheckCircle2 } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { SupportCTA } from "../components/ui/SupportCTA";
 import { useSEO } from "../hooks/useSEO";
@@ -94,22 +94,23 @@ export default function Impact() {
                ))}
             </div>
 
-            {/* Interactive Map Placeholder */}
+            {/* Video Section */}
             <div className="max-w-5xl mx-auto">
                <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
                   <div>
-                     <h3 className="text-2xl font-heading font-bold text-gray-900 mb-2">Geographic Reach</h3>
-                     <p className="text-gray-600">Explore our active project locations across Zimbabwe.</p>
+                     <h3 className="text-2xl font-heading font-bold text-gray-900 mb-2">See Our Impact in Action</h3>
+                     <p className="text-gray-600">Watch the measurable difference we are continuing to make across communities in Zimbabwe.</p>
                   </div>
                </div>
                
-               <div className="bg-white w-full h-[500px] rounded-3xl border border-gray-200 shadow-sm overflow-hidden relative flex items-center justify-center">
-                  {/* Placeholder Map UI */}
-                  <div className="absolute inset-0 bg-[#e5e7eb] opacity-30 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSIjY2JkNWUxIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiPjxwYXRoIGQ9Ik0wIDEwbDQwIDBTTTAgMjBsNDAgMFNNMCAzMGw0MCAwU00xMCAwbDAgNDBTSTIwIDBsMCA0MFNNMzAgMGwwIDQwIi8+PC9nPjwvc3ZnPg==')]" />
-                  <div className="z-10 text-center">
-                     <MapPin className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-                     <p className="text-gray-500 font-medium">Interactive Map Data Integration Pending</p>
-                  </div>
+               <div className="bg-gray-100 w-full aspect-video rounded-3xl border border-gray-200 shadow-xl overflow-hidden relative flex items-center justify-center">
+                  <iframe 
+                     className="absolute inset-0 w-full h-full z-20"
+                     src="https://www.youtube.com/embed/xEGHjwrPaks?si=C6R3LnXUYS3RpPl5" 
+                     title="Resilient Villages Video - The Plight of Rural Women" 
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                     allowFullScreen
+                  ></iframe>
                </div>
             </div>
          </div>
