@@ -248,6 +248,33 @@ export default function Home() {
          </div>
       </section>
 
+      {/* Featured Story Section */}
+      <section className="py-24 bg-gray-50 border-b border-gray-100 relative">
+         <div className="container mx-auto px-4 md:px-6">
+            <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 flex flex-col md:flex-row max-w-6xl mx-auto">
+               <div className="md:w-1/2 relative h-64 md:h-auto">
+                  <Image src="/images/the plight of rural women.jpeg" alt="The Plight of Rural Women" className="w-full h-full object-cover" />
+               </div>
+               <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                  <div className="inline-flex items-center gap-2 text-primary-700 font-medium mb-4">
+                     <span className="h-px w-8 bg-primary-700"></span> Featured Insight
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-6">
+                     The Plight of Rural Women: Why Empowerment is the Key to Development
+                  </h2>
+                  <p className="text-gray-600 md:text-lg mb-8 leading-relaxed">
+                     Women and children form the backbone of rural economies, yet they face disproportionate challenges. Discover why empowering them transforms entire communities.
+                  </p>
+                  <Button className="w-fit group bg-primary-700 hover:bg-primary-800 text-white" asChild>
+                     <Link to="/stories/empowering-rural-women">
+                        Read Full Story <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                     </Link>
+                  </Button>
+               </div>
+            </div>
+         </div>
+      </section>
+
       {/* Partners Section */}
       <section className="py-20 bg-white">
          <div className="container mx-auto px-4 md:px-6">
