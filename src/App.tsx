@@ -18,7 +18,6 @@ import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
 import Stories from "./pages/Stories";
 import StoryDetail from "./pages/StoryDetail";
-import Publications from "./pages/Publications";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 
@@ -44,7 +43,6 @@ export default function App() {
           
           <Route path="stories/:id" element={<StoryDetail />} />
           
-          <Route path="publications" element={<Publications />} />
           <Route path="contact" element={<Contact />} />
           <Route path="privacy" element={<PrivacyPolicy />} />
           <Route path="terms" element={<TermsOfService />} />

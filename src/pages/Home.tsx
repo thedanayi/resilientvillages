@@ -1,41 +1,20 @@
 import { Image } from "../components/ui/Image";
-import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Leaf, Droplets, BookOpen, HeartHandshake, ChevronRight, Globe2, TreePine, Sprout } from "lucide-react";
+import { ArrowRight, Leaf, Droplets, BookOpen, ChevronRight } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { SupportCTA } from "../components/ui/SupportCTA";
 
-import { Partner } from "../types";
-import { getPartners } from "../data/partners";
-
 /**
  * The Home component represents the main landing page of the application.
  */
 export default function Home() {
-  // State hook to store the list of partners loaded from the data source.
-  const [partners, setPartners] = useState<Partner[]>([]);
-
   // Custom hook to set the page title and meta description for Search Engine Optimization (SEO)
   useSEO({
     title: "Building Resilient Communities",
     description: "Resilient Villages Zimbabwe delivers high-impact programs and long-term socio-economic solutions to vulnerable communities.",
   });
-
-  useEffect(() => {
-    let isMounted = true;
-    
-    getPartners()
-      .then((data) => {
-        if (isMounted) setPartners(data);
-      })
-      .catch((error) => console.error("Failed to fetch partners", error));
-      
-    return () => {
-      isMounted = false;
-    };
-  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -98,35 +77,6 @@ export default function Home() {
               </motion.div>
            </div>
         </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="py-20 bg-white">
-         <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center divide-x-0 md:divide-x divide-gray-100">
-               {[
-                 { label: "Beneficiaries Reached", value: "25,000+", icon: HeartHandshake },
-                 { label: "Communities Supported", value: "48", icon: Leaf },
-                 { label: "Projects Completed", value: "112", icon: Droplets },
-                 { label: "Active Partners", value: "15", icon: BookOpen },
-               ].map((stat, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.5 }}
-                    className="flex flex-col items-center p-4"
-                  >
-                     <div className="w-12 h-12 bg-primary-50 rounded-full flex items-center justify-center mb-4 text-primary-600">
-                        <stat.icon className="w-6 h-6" />
-                     </div>
-                     <h3 className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-2">{stat.value}</h3>
-                     <p className="text-gray-600 font-medium">{stat.label}</p>
-                  </motion.div>
-               ))}
-            </div>
-         </div>
       </section>
 
       {/* Focus Areas */}
@@ -271,39 +221,6 @@ export default function Home() {
                      </Link>
                   </Button>
                </div>
-            </div>
-         </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="py-20 bg-white">
-         <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-               <h2 className="text-3xl font-heading font-bold text-gray-900 mb-4">Our Partners</h2>
-               <p className="text-gray-600">Together, we build lasting change. We are proud to collaborate with organizations committed to rural development.</p>
-            </div>
-            
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-               {partners.length > 0 ? partners.map((partner) => {
-                  let Icon = Globe2;
-                  if (partner.id === 'partner-2') Icon = Droplets;
-                  if (partner.id === 'partner-3') Icon = TreePine;
-                  if (partner.id === 'partner-4') Icon = Sprout;
-
-                  return (
-                     <div 
-                        key={partner.id} 
-                        className="flex items-center gap-3 text-gray-400 hover:text-primary-800 transition-colors duration-300 cursor-pointer"
-                     >
-                        <Icon className="w-8 h-8 md:w-10 md:h-10" />
-                        <span className="font-heading font-bold text-xl md:text-2xl tracking-tight">
-                           {partner.name}
-                        </span>
-                     </div>
-                  );
-               }) : (
-                 <p className="text-gray-400">Loading partners...</p>
-               )}
             </div>
          </div>
       </section>
