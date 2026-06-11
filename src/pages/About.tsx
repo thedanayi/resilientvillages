@@ -136,10 +136,10 @@ export default function About() {
              <div className="flex flex-wrap justify-center gap-12">
                 {[
                   { name: "Stella Gaihai Khumalo", role: "Chairperson", img: "/images/Stella Gaihai Khumalo - Chairperson.jpg" },
-                  { name: "Tambudzai Maria Mushayi", role: "Vice Secretary", img: "/images/Tambudzai Maria Mushayi - Vice Secretary.jpeg" },
-                  { name: "Anthony T Chirape", role: "Board Member", img: "/images/Anthont T Chirape - Board Member.jpeg" },
                   { name: "Modester Mutero", role: "Secretary", img: "/images/Modester Mutero - Secretary.jpg" },
-                  { name: "Rabson Mutumhe", role: "Treasurer", img: "/images/Rabson Mutumhe - Treasurer.jpg" }
+                  { name: "Tambudzai Maria Mushayi", role: "Vice Secretary", img: "/images/Tambudzai Maria Mushayi - Vice Secretary.jpeg" },
+                  { name: "Rabson Mutumhe", role: "Treasurer", img: "/images/Rabson Mutumhe - Treasurer.jpg" },
+                  { name: "Anthony T Chirape", role: "Board Member", img: "/images/Anthont T Chirape - Board Member.jpeg" }
                 ].map((member, i) => (
                   <div key={i} className="flex flex-col items-center max-w-[240px]">
                      <div className="w-48 h-48 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-md">
