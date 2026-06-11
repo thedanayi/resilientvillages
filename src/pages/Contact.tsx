@@ -21,9 +21,10 @@ export default function Contact() {
 
     const form = e.currentTarget;
     const body = new FormData(form);
+    body.append("access_key", "31430e91-ce82-459a-8399-587f97c3a4bb");
 
     try {
-       const response = await fetch('https://formspree.io/f/placeholder-id', {
+       const response = await fetch('https://api.web3forms.com/submit', {
            method: 'POST',
            body,
            headers: {
