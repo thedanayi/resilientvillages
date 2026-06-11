@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Users, Target, Shield, History } from "lucide-react";
 import { SupportCTA } from "../components/ui/SupportCTA";
 import { useSEO } from "../hooks/useSEO";
+import { LiteYouTube } from "../components/ui/LiteYouTube";
 
 
 /**
@@ -47,16 +48,9 @@ export default function About() {
                  initial={{ opacity: 0, x: 20 }} // Start slightly to the right (x: 20px) and invisible (opacity: 0)
                  whileInView={{ opacity: 1, x: 0 }} // Animate to final position (x: 0, opacity: 1)
                  viewport={{ once: true }} // Only trigger this animation once when scrolled into view
-                 className="relative h-96 rounded-3xl overflow-hidden shadow-xl bg-gray-100"
+                 className="relative h-96 rounded-3xl overflow-hidden shadow-xl bg-gray-100 flex items-center justify-center"
               >
-                 {/* YouTube Video iframe component for embedding video content */}
-                 <iframe 
-                    className="absolute inset-0 w-full h-full z-20"
-                    src="https://www.youtube.com/embed/xEGHjwrPaks?si=C6R3LnXUYS3RpPl5" 
-                    title="Resilient Villages Video - The Plight of Rural Women" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                 ></iframe>
+                 <LiteYouTube videoId="xEGHjwrPaks" title="Resilient Villages Video - The Plight of Rural Women" />
               </motion.div>
            </div>
            

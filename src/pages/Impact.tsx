@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { Map, Target, TrendingUp, CheckCircle2 } from "lucide-react";
 import { SupportCTA } from "../components/ui/SupportCTA";
 import { useSEO } from "../hooks/useSEO";
+import { LiteYouTube } from "../components/ui/LiteYouTube";
 
 export default function Impact() {
   useSEO({
@@ -61,13 +62,9 @@ export default function Impact() {
                </div>
                
                <div className="bg-gray-100 w-full aspect-video rounded-3xl border border-gray-200 shadow-xl overflow-hidden relative flex items-center justify-center">
-                  <iframe 
-                     className="absolute inset-0 w-full h-full z-20"
-                     src="https://www.youtube.com/embed/xEGHjwrPaks?si=C6R3LnXUYS3RpPl5" 
-                     title="Resilient Villages Video - The Plight of Rural Women" 
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                     allowFullScreen
-                  ></iframe>
+                  <div className="absolute inset-0 w-full h-full z-20 flex bg-black/5 items-center justify-center">
+                     <LiteYouTube videoId="xEGHjwrPaks" title="Resilient Villages Video - The Plight of Rural Women" />
+                  </div>
                </div>
             </div>
          </div>

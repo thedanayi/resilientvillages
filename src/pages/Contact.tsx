@@ -1,14 +1,48 @@
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
-import { MapPin, Phone, Mail, Send, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Send, MessageCircle, CheckCircle } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { useSEO } from "../hooks/useSEO";
+import { useState } from "react";
 
 export default function Contact() {
   useSEO({
     title: "Contact Us",
     description: "Partner with us, ask a question, or learn how you can support Resilient Villages Zimbabwe.",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const form = e.currentTarget;
+    const body = new FormData(form);
+
+    try {
+       const response = await fetch('https://formspree.io/f/placeholder-id', {
+           method: 'POST',
+           body,
+           headers: {
+              'Accept': 'application/json'
+           }
+       });
+
+       if (response.ok) {
+           setSubmitStatus('success');
+           form.reset();
+       } else {
+           setSubmitStatus('error');
+       }
+    } catch (err) {
+       setSubmitStatus('error');
+    } finally {
+       setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="flex flex-col w-full">
@@ -74,30 +108,57 @@ export default function Contact() {
              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
                 <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                    <h3 className="text-2xl font-heading font-bold text-gray-900 mb-6">Send a Message</h3>
-                   <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                   
+                   {submitStatus === 'success' && (
+                     <div className="mb-6 p-4 rounded-xl flex items-start gap-3 text-primary-900 bg-primary-50 border border-primary-200">
+                        <CheckCircle className="w-5 h-5 shrink-0 mt-0.5 text-primary-600" />
+                        <div>
+                           <h4 className="font-bold">Message Sent Successfully</h4>
+                           <p className="text-sm opacity-90">Thank you for reaching out. Our team will get back to you shortly.</p>
+                        </div>
+                     </div>
+                   )}
+
+                   {submitStatus === 'error' && (
+                     <div className="mb-6 p-4 rounded-xl flex items-start gap-3 bg-red-50 text-red-900 border border-red-200">
+                        <MessageCircle className="w-5 h-5 shrink-0 mt-0.5 text-red-600" />
+                        <div>
+                           <h4 className="font-bold">Failed to Send Message</h4>
+                           <p className="text-sm opacity-90">Please check your connection and try again, or email us directly.</p>
+                        </div>
+                     </div>
+                   )}
+
+                   <form className="space-y-6" onSubmit={handleSubmit}>
+                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                          <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-700" htmlFor="firstName">First Name</label>
-                            <input id="firstName" type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="Chipo" />
+                            <input id="firstName" name="firstName" required type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="Chipo" />
                          </div>
                          <div className="space-y-2">
                             <label className="text-sm font-medium text-gray-700" htmlFor="lastName">Last Name</label>
-                            <input id="lastName" type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="Moyo" />
+                            <input id="lastName" name="lastName" required type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="Moyo" />
                          </div>
                       </div>
                       
                       <div className="space-y-2">
                          <label className="text-sm font-medium text-gray-700" htmlFor="email">Email Address</label>
-                         <input id="email" type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="chipo@example.com" />
+                         <input id="email" name="email" required type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all" placeholder="chipo@example.com" />
                       </div>
                       
                       <div className="space-y-2">
                          <label className="text-sm font-medium text-gray-700" htmlFor="message">Message</label>
-                         <textarea id="message" rows={5} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none" placeholder="How can we help you?" />
+                         <textarea id="message" name="message" required rows={5} className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none" placeholder="How can we help you?" />
                       </div>
                       
-                      <Button type="submit" className="w-full gap-2 text-lg py-6">
-                         <Send className="w-5 h-5" /> Send Message
+                      <Button type="submit" disabled={isSubmitting} className="w-full gap-2 text-lg py-6 bg-primary-600 hover:bg-primary-700 text-white disabled:opacity-70 disabled:cursor-not-allowed">
+                         {isSubmitting ? (
+                            <span className="flex items-center gap-2">
+                               <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin shrink-0"></span> Sending...
+                            </span>
+                         ) : (
+                            <><Send className="w-5 h-5 shrink-0" /> Send Message</>
+                         )}
                       </Button>
                    </form>
                 </div>

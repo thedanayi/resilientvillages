@@ -5,6 +5,7 @@ import { Button } from "../components/ui/Button";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
 import { SupportCTA } from "../components/ui/SupportCTA";
+import { LiteYouTube } from "../components/ui/LiteYouTube";
 
 /**
  * The Home component represents the main landing page of the application.
@@ -184,15 +185,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl bg-black"
+                  className="relative h-[400px] md:h-[600px] rounded-3xl shadow-2xl overflow-hidden flex items-center bg-black/50"
                >
-                  <iframe 
-                     className="w-full h-full absolute top-0 left-0"
-                     src="https://www.youtube.com/embed/2AKqVo2AT8A?rel=0" 
-                     title="YouTube video player" 
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                     allowFullScreen
-                  ></iframe>
+                  <LiteYouTube videoId="2AKqVo2AT8A" title="Healing the Environment Video" />
                </motion.div>
             </div>
          </div>

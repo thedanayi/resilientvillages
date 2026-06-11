@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { cn } from '../../lib/utils';
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -12,9 +12,18 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 export function Image({ className, alt, src, fallbackSrc, loading = 'lazy', ...props }: ImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    // If image is already cached and complete before load event attaches, force state
+    if (imgRef.current?.complete) {
+      setIsLoaded(true);
+    }
+  }, [src]);
 
   return (
     <img
+      ref={imgRef}
       src={error && fallbackSrc ? fallbackSrc : src}
       alt={alt || ''}
       loading={loading}

@@ -7,6 +7,7 @@ import { Story } from "../types";
 import { getStories } from "../data/stories";
 import { SupportCTA } from "../components/ui/SupportCTA";
 import { useSEO } from "../hooks/useSEO";
+import { LiteYouTube } from "../components/ui/LiteYouTube";
 
 /**
  * StoryDetail component dynamically displays the full content of an individual success story.
@@ -148,16 +149,11 @@ export default function StoryDetail() {
 
                   {/* Display video if available, otherwise show the article image */}
                   {story.videoUrl ? (
-                     <div className="my-12 relative w-full pb-[56.25%] overflow-hidden rounded-2xl shadow-md">
+                     <div className="my-12 relative w-full pb-[56.25%] overflow-hidden rounded-2xl shadow-md bg-gray-900">
                         {/* 16:9 Aspect Ratio Container for YouTube video */}
-                        <iframe 
-                           className="absolute top-0 left-0 w-full h-full"
-                           src={story.videoUrl} 
-                           title={story.title}
-                           frameBorder="0" 
-                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                           allowFullScreen
-                        ></iframe>
+                        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                            <LiteYouTube videoId={story.videoUrl.match(/\/embed\/([^?]+)/)?.[1] || ""} title={story.title} />
+                        </div>
                      </div>
                   ) : (
                      <div className="my-12">
