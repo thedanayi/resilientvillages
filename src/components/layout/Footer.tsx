@@ -78,7 +78,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-             <h3 className="font-heading font-semibold text-lg mb-6">Contact & Newsletter</h3>
+             <h3 className="font-heading font-semibold text-lg mb-6">Contact</h3>
              <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3 text-primary-200 text-sm">
                    <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
@@ -93,14 +93,6 @@ export function Footer() {
                    <a href="mailto:info@resilientvillages.org" className="hover:text-white transition-colors">info@resilientvillages.org</a>
                 </li>
              </ul>
-             
-             <div className="bg-primary-900 rounded-lg p-4 border border-primary-800">
-               <h4 className="text-sm font-semibold mb-2 text-white">Subscribe to our Updates</h4>
-               <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-                 <input type="email" placeholder="Email Address" className="w-full px-3 py-2 text-sm rounded bg-primary-950 text-white border border-primary-700 focus:outline-none focus:border-primary-500" />
-                 <Button size="sm" type="submit" className="bg-accent-600 hover:bg-accent-700 text-white shrink-0">Subscribe</Button>
-               </form>
-             </div>
              
              <div className="mt-6 flex flex-col gap-3">
                <Button asChild className="w-full bg-primary-800 hover:bg-primary-700 text-white border border-primary-700">
