@@ -25,7 +25,7 @@ export default function Home() {
       <section className="relative w-full min-h-[90vh] flex items-center bg-primary-950 overflow-hidden" aria-labelledby="hero-heading">
         <div className="absolute inset-0 w-full h-full">
            <Image 
-              src="https://images.unsplash.com/photo-1531206715517-5c0ba140b4b8?q=80&w=2940&auto=format&fit=crop" 
+              src="/images/grandma.jpg" 
               alt="Community working together" 
               className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
               loading="eager"
