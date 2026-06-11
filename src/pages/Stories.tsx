@@ -15,7 +15,7 @@ export default function Stories() {
   
   // Custom hook to set SEO meta tags reflecting the page intent
   useSEO({
-    title: "Success Stories",
+    title: "Stories",
     description: "Read inspiring stories of community transformation and resilience from our beneficiaries in Zimbabwe.",
   });
 
@@ -37,7 +37,7 @@ export default function Stories() {
   return (
     <div className="flex flex-col w-full">
       <PageHeader 
-        title="Success Stories" 
+        title="Stories" 
         description="Real stories of resilience, empowerment, and transformation from the communities we serve."
         image="https://images.unsplash.com/photo-1542810634-71277d95dc8c?q=80&w=2000&auto=format&fit=crop"
       />

@@ -174,7 +174,7 @@ export default function Home() {
                   
                   <Button className="bg-white text-primary-900 hover:bg-gray-100 group" asChild>
                      <Link to="/stories">
-                        Read Our Success Stories <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        Read Our Stories <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                      </Link>
                   </Button>
                </motion.div>

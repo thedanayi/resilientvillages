@@ -47,7 +47,7 @@ export function Footer() {
                 { name: 'Our Programs', href: '/programs' },
                 { name: 'Projects in Action', href: '/projects' },
                 { name: 'Impact & Data', href: '/impact' },
-                { name: 'Success Stories', href: '/stories' }
+                { name: 'Stories', href: '/stories' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link to={item.href} className="text-primary-200 hover:text-white transition-colors text-sm flex items-center gap-2 group">
