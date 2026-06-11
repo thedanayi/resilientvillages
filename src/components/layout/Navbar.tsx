@@ -80,10 +80,6 @@ export function Navbar() {
             <Button variant="ghost" asChild>
               <Link to="/contact">Contact</Link>
             </Button>
-            <Button className="gap-2 bg-accent-600 hover:bg-accent-700 text-white font-semibold flex items-center">
-              <Heart className="w-4 h-4" />
-              Donate
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -117,10 +113,6 @@ export function Navbar() {
           <div className="px-4 py-3 flex flex-col gap-3 border-t mt-2 pt-5">
              <Button variant="outline" className="w-full justify-center" asChild>
                 <Link to="/contact">Contact Us</Link>
-             </Button>
-             <Button className="w-full justify-center gap-2 bg-accent-600 hover:bg-accent-700 text-white flex items-center">
-                <Heart className="w-4 h-4" />
-                Donate Now
              </Button>
           </div>
         </nav>
