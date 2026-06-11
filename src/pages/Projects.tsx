@@ -2,7 +2,7 @@ import { Image } from "../components/ui/Image";
 import { useEffect, useState } from "react";
 import { PageHeader } from "../components/ui/PageHeader";
 import { motion } from "motion/react";
-import { MapPin, Users } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Project } from "../types";
 import { getProjects } from "../data/projects";
 import { SupportCTA } from "../components/ui/SupportCTA";
@@ -53,9 +53,6 @@ export default function Projects() {
                     <div className="absolute top-4 left-4 flex flex-col gap-2">
                        <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary-800 flex items-center shadow-sm">
                           <MapPin className="w-3 h-3 mr-1" /> {project.location}
-                       </span>
-                       <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-accent-600 flex items-center shadow-sm">
-                          <Users className="w-3 h-3 mr-1" /> {project.beneficiaries}
                        </span>
                     </div>
                  </div>
