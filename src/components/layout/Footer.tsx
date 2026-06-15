@@ -12,13 +12,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
           <div className="lg:col-span-4 pr-0 lg:pr-8">
-            <Link to="/" className="flex items-center gap-2 mb-6 group" aria-label="Resilient Villages Zimbabwe Home">
-              <Image src="/images/logo.jpeg" alt="Resilient Villages Zimbabwe Logo" className="w-12 h-12 md:w-14 md:h-14 shrink-0 object-contain rounded bg-white p-0.5" />
-              <span className="font-heading font-bold text-xl lg:text-2xl tracking-tighter text-white flex flex-wrap gap-1 items-baseline">
-                <span>Resilient</span>
-                <span>Villages</span>
-                <span className="text-primary-400">Zimbabwe</span>
-              </span>
+            <Link to="/" className="flex items-center mb-6 group" aria-label="Resilient Villages Zimbabwe Home">
+              <Image src="/images/resilient-villages-logo.png" alt="Resilient Villages Zimbabwe Logo" className="h-24 md:h-32 shrink-0 object-contain drop-shadow-md bg-white rounded-full p-2" />
             </Link>
             <p className="text-primary-100 text-sm leading-relaxed mb-6">
               Sustainable empowerment of communities. Working together to build high-impact programs and long-term socio-economic solutions.
