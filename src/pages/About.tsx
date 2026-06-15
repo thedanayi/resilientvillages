@@ -100,7 +100,7 @@ export default function About() {
             
             <div className="space-y-12">
                {[
-                 { year: "2018", title: "Foundation", desc: "RVZ was officially registered to respond directly to the worsening water crisis in the Chaka District." },
+                 { year: "2018", title: "Foundation", desc: "RVZ was officially registered to respond directly to the worsening water crisis in the Chirumhanzu District." },
                  { year: "2020", title: "Agricultural Pivot", desc: "Launched climate-smart agriculture programs to combat severe droughts and food insecurity." },
                  { year: "2023", title: "Expanded Reach", desc: "Scaled operations to cover 48 communities, establishing the Munhande Nutrition Garden as a flagship model." }
                ].map((item, i) => (

@@ -26,7 +26,7 @@ export const publications: Publication[] = [
     title: "Impact of Solar Boreholes on Village Health",
     category: "Research",
     year: 2024,
-    description: "A detailed study conducted in the Chaka District showing the correlation between local water access and the reduction of disease.",
+    description: "A detailed study conducted in the Chirumhanzu District showing the correlation between local water access and the reduction of disease.",
     downloadUrl: "#",
     fileSize: "1.5 MB",
     img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=800&auto=format&fit=crop"

@@ -36,7 +36,7 @@ export const projects: Project[] = [
     id: "water-harvesting",
     programId: "wash",
     title: "Water Harvesting Expansion",
-    location: "Chaka District",
+    location: "Chirumhanzu District",
     beneficiaries: "3,500 People",
     challenge: "Women walked up to 8km daily to fetch unsafe surface water.",
     intervention: "Constructed 5 large-scale rainwater harvesting weirs and rehabilitated 3 community boreholes.",
