@@ -16,7 +16,7 @@ export const publications: Publication[] = [
     title: "Strategic Plan 2026-2030",
     category: "Strategic Plan",
     year: 2025,
-    description: "Our five-year roadmap detailing our goals for expanding climate-smart agriculture and deepening community resilience.",
+    description: "Our five-year roadmap detailing our goals for expanding climate-smart agriculture and livelihoods and deepening community resilience.",
     downloadUrl: "#",
     fileSize: "2.8 MB",
     img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop"

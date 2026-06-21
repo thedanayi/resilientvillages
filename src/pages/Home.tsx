@@ -100,7 +100,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                {[
                  {
-                    title: "Climate-Smart Agriculture",
+                    title: "Climate-Smart Agriculture and Livelihoods",
                     desc: "Equipping communities with modern farming techniques to combat climate change, ensuring food security and nutrition.",
                     icon: Leaf,
                     img: "/images/Climate Smart Agriculture.jpg"

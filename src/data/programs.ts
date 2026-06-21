@@ -16,7 +16,7 @@ import { Program } from '../types';
 export const programs: Program[] = [
   {
     id: "climate-agriculture",
-    title: "Climate-Smart Agriculture",
+    title: "Climate-Smart Agriculture and Livelihoods",
     description: "Equipping rural farmers with sustainable techniques to adapt to climate change, ensuring food security and economic stability.",
     outcomes: ["Increased crop yields", "Soil preservation", "Drought resilience"],
     img: "/images/Climate Smart Agriculture.jpg"

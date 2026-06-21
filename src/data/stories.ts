@@ -8,7 +8,7 @@ export const stories: Story[] = [
     location: "Munhande Village",
     summary: "How a community garden transformed a single mother's capacity to feed and educate her children.",
     challenge: "Before the nutrition garden, droughts had devastated Chipo's maize crops three years in a row. She struggled to afford two meals a day for her four children and had to pull her eldest daughter out of school due to unpaid fees.",
-    solution: "With the introduction of the Munhande Nutrition Garden and solar-powered irrigation, Chipo received a plot and training in climate-smart agriculture, focusing on drought-resistant vegetables.",
+    solution: "With the introduction of the Munhande Nutrition Garden and solar-powered irrigation, Chipo received a plot and training in climate-smart agriculture and livelihoods, focusing on drought-resistant vegetables.",
     outcome: "Today, Chipo harvests tomatoes, kale, and onions year-round. Her family enjoys a diverse, nutritious diet. 'I not only feed my family,' she says, 'but I sell the surplus at the local market to pay for my daughter's school fees.'",
     quote: "Before the nutrition garden, our harvests were unpredictable. Now, we not only feed our families year-round but sell the surplus to pay for school fees.",
     img: "/images/reaping life from dry earth.jpg",

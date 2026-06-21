@@ -58,7 +58,7 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-lg mb-6">Our Focus Areas</h3>
             <ul className="space-y-4">
               {[
-                'Climate-Smart Agriculture', 
+                'Climate-Smart Agriculture and Livelihoods', 
                 'Water & Sanitation (WASH)', 
                 'Environment Conservation', 
                 'Basic Education',
