@@ -16,6 +16,7 @@ export interface Project {
   intervention: string;
   results: string;
   img: string;
+  images?: string[];
 }
 
 export interface Story {

@@ -22,6 +22,21 @@ import { Project } from '../types';
 
 export const projects: Project[] = [
   {
+    id: "mugari-tavagwisa-garden",
+    programId: "climate-agriculture",
+    title: "Mugari & Tavagwisa Nutrition Garden",
+    location: "Ward 2, Chirumhanzu District",
+    beneficiaries: "60 Households",
+    challenge: "Communities in Ward 2 lacked access to reliable water and sustainable agriculture, leading to persistent food insecurity.",
+    intervention: "Funded by UNDP-GEF SGP, established life-changing community agricultural initiatives and nutrition gardens to promote sustainable livelihoods.",
+    results: "Empowered 60 households with robust food production, improved local nutrition, and a stable, climate-resilient income source.",
+    img: "/images/mugari (1).jpeg",
+    images: [
+      "/images/mugari (2).jpeg",
+      "/images/mugari (3).jpeg"
+    ]
+  },
+  {
     id: "munhande-garden",
     programId: "climate-agriculture",
     title: "Munhande Nutrition Garden Project",

@@ -73,6 +73,19 @@ export default function Projects() {
                           <h4 className="text-sm font-bold text-primary-600 uppercase tracking-wider mb-1">Results</h4>
                           <p className="text-gray-900 font-medium">{project.results}</p>
                        </div>
+                       
+                       {project.images && project.images.length > 0 && (
+                          <div className="mt-6 pt-6 border-t border-gray-100">
+                             <h4 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">Gallery</h4>
+                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                {project.images.map((img, idx) => (
+                                   <div key={idx} className="aspect-square rounded-xl overflow-hidden bg-gray-100">
+                                      <Image src={img} alt={`${project.title} Gallery ${idx + 1}`} className="w-full h-full object-cover" />
+                                   </div>
+                                ))}
+                             </div>
+                          </div>
+                       )}
                     </div>
                  </div>
                </motion.div>
