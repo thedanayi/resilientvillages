@@ -2,6 +2,19 @@ import { Story } from '../types';
 
 export const stories: Story[] = [
   {
+    id: "mugari-time-poverty",
+    title: "Reclaiming Time: The Reality of Rural Women's Workload",
+    beneficiary: "Ms. Tigidi & Women of Ward 2",
+    location: "Mugari Village, Chirumanzu District",
+    summary: "How integrated solar-powered nutrition gardens and sanitation facilities drastically reduced 'time poverty' for women.",
+    challenge: "In rural Chirumanzu, 80% of households experience male migration, leaving women and children to manage livelihoods alone. Women were spending up to 12 continuous hours a day on unpaid work, including long, hazardous trips to fetch water, posing a serious public health hazard and draining their energy.",
+    solution: "RVZ established the Mugari and Tavagwisa nutrition gardens featuring solar-powered drip irrigation and constructed double Blair ventilated latrines on-site. This eliminated the need for women to return home for ablution facilities or travel long distances for safe water.",
+    outcome: "Women's daily unpaid workload dropped from 12 hours to 8 hours, saving an astonishing 4 hours per day. This reclaimed time is now redirected towards resting, family care, and further education.",
+    quote: "It is refreshing to note that we can spend the whole day in the nutrition garden watering and managing our crops without pressure of going back home to seek for ablution facilities. What we only bring along are our lunch boxes as we are assured of availability of clean drinking water, safe sanitary facilities and a clean and cool environment.",
+    img: "/images/mugari (1).jpeg",
+    date: "2026-06-24"
+  },
+  {
     id: "chipo-makoni",
     title: "Reaping Life from Dry Earth",
     beneficiary: "Chipo Makoni",

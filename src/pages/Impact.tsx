@@ -18,6 +18,33 @@ export default function Impact() {
         description="Measurable transformation driven by data, accountability, and community ownership."
       />
       
+      {/* Impact Metrics Section */}
+      <section className="py-16 bg-white">
+         <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+               {[
+                 { stat: "5,600+", label: "Trees Saved", desc: "By replacing traditional brushwood fencing with diamond mesh wire." },
+                 { stat: "4 hrs", label: "Daily Time Saved", desc: "Women's unpaid workload reduced, reclaiming time for family and education." },
+                 { stat: "400+", label: "Households", desc: "Gained access to clean, reliable solar-powered drinking water." },
+                 { stat: "1,000+", label: "Beneficiaries", desc: "Achieved improved food security through climate-smart gardens." }
+               ].map((metric, i) => (
+                  <motion.div 
+                     key={i}
+                     initial={{ opacity: 0, scale: 0.95 }}
+                     whileInView={{ opacity: 1, scale: 1 }}
+                     viewport={{ once: true }}
+                     transition={{ delay: i * 0.1 }}
+                     className="bg-gray-50 p-8 rounded-3xl border border-gray-100 text-center hover:shadow-md transition-shadow"
+                  >
+                     <div className="text-4xl md:text-5xl font-heading font-black text-primary-600 mb-4">{metric.stat}</div>
+                     <h3 className="text-xl font-bold text-gray-900 mb-2">{metric.label}</h3>
+                     <p className="text-gray-600 text-sm">{metric.desc}</p>
+                  </motion.div>
+               ))}
+            </div>
+         </div>
+      </section>
+
       {/* New Framework & Map Placeholder */}
       <section className="py-24 bg-gray-50">
          <div className="container mx-auto px-4 md:px-6">
