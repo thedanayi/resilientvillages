@@ -17,6 +17,7 @@ import Home from "./pages/Home";
 const About = lazy(() => import("./pages/About"));
 const Programs = lazy(() => import("./pages/Programs"));
 const Projects = lazy(() => import("./pages/Projects"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const Impact = lazy(() => import("./pages/Impact"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Stories = lazy(() => import("./pages/Stories"));
@@ -43,6 +44,7 @@ export default function App() {
             <Route path="about" element={<About />} />
             <Route path="programs" element={<Programs />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="projects/:id" element={<ProjectDetail />} />
             <Route path="impact" element={<Impact />} />
             <Route path="stories" element={<Stories />} />
             

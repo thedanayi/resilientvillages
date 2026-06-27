@@ -17,6 +17,14 @@ export interface Project {
   results: string;
   img: string;
   images?: string[];
+  donor?: string;
+  objectives?: string[];
+  impacts?: {
+    category: string;
+    points: string[];
+  }[];
+  lessonsLearned?: string[];
+  sustainability?: string[];
 }
 
 export interface Story {
