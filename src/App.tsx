@@ -24,6 +24,7 @@ const Stories = lazy(() => import("./pages/Stories"));
 const StoryDetail = lazy(() => import("./pages/StoryDetail"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Internal fallback loading spinner for Suspense
 const PageLoader = () => (
@@ -54,7 +55,7 @@ export default function App() {
             <Route path="privacy" element={<PrivacyPolicy />} />
             <Route path="terms" element={<TermsOfService />} />
             
-            <Route path="*" element={<div className="container py-32 text-center font-heading text-2xl text-primary-900">Page Not Found</div>} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>

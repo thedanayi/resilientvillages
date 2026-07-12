@@ -17,6 +17,8 @@ export interface Project {
   results: string;
   img: string;
   images?: string[];
+  beforeImage?: string;
+  afterImage?: string;
   donor?: string;
   objectives?: string[];
   impacts?: {

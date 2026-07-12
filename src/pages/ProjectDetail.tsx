@@ -8,6 +8,7 @@ import { PageHeader } from "../components/ui/PageHeader";
 import { Image } from "../components/ui/Image";
 import { useSEO } from "../hooks/useSEO";
 import { Lightbox } from "../components/ui/Lightbox";
+import { BeforeAfterSlider } from "../components/ui/BeforeAfterSlider";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -135,6 +136,19 @@ export default function ProjectDetail() {
           <div className="lg:col-span-1">
              {/* Gallery Sidebar */}
              <div className="sticky top-24">
+                {project.beforeImage && project.afterImage && (
+                  <div className="mb-8">
+                    <h3 className="text-xl font-bold text-gray-900 mb-6">Impact Comparison</h3>
+                    <div className="rounded-2xl overflow-hidden aspect-video shadow-sm border border-gray-100 relative">
+                      <BeforeAfterSlider 
+                        beforeImage={project.beforeImage} 
+                        afterImage={project.afterImage} 
+                        className="w-full h-full"
+                      />
+                    </div>
+                  </div>
+                )}
+                
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Gallery</h3>
                 <div className="grid grid-cols-2 gap-3">
                   {allImages.map((img, idx) => (

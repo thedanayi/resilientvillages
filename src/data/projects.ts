@@ -103,7 +103,9 @@ export const projects: Project[] = [
     challenge: "Women walked up to 8km daily to fetch unsafe surface water.",
     intervention: "Constructed 5 large-scale rainwater harvesting weirs and rehabilitated 3 community boreholes.",
     results: "Water access reduced to under 500m. 80% reduction in waterborne disease cases at local clinics.",
-    img: "/images/water-harvesting (1).jpg"
+    img: "/images/water-harvesting (1).jpg",
+    beforeImage: "/images/water-harvesting (2).jpg",
+    afterImage: "/images/water-harvesting (1).jpg"
   }
 ];
 
