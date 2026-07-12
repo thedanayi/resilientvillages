@@ -189,6 +189,14 @@ export default function About() {
                       "BSc Agron Hon. , MSc Soil Science:, Kuban Agrarian University, Federal Republic of Russia (1983- 1989)",
                       "Doctor of Philosophy (DPhil), Department of Soil Science and Agricultural Engineering, Faculty of Agriculture, University of Zimbabwe (2014)"
                     ]
+                  },
+                  {
+                    name: "Cynthia Changa",
+                    role: "Board Member",
+                    img: undefined,
+                    bio: [
+                      "Founder member of Family of Hope Organisation"
+                    ]
                   }
                 ].map((member, i) => (
                   <div key={i} className="flex flex-col items-center max-w-[320px] text-center bg-gray-50 p-6 rounded-3xl shadow-sm border border-gray-100">
