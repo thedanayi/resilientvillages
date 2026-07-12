@@ -67,6 +67,16 @@ export default function Contact() {
                       </div>
                       <div>
                          <h3 className="font-bold text-gray-900 mb-1">Head Office</h3>
+                         <p className="text-gray-600">15 Barbet Avenue, Northlea<br/>Gweru, Zimbabwe</p>
+                      </div>
+                   </div>
+                   
+                   <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 shrink-0">
+                         <MapPin className="w-5 h-5" />
+                      </div>
+                      <div>
+                         <h3 className="font-bold text-gray-900 mb-1">Field Office</h3>
                          <p className="text-gray-600">Stand 28 Chaka Business Centre<br/>Mvuma, Zimbabwe</p>
                       </div>
                    </div>
@@ -167,6 +177,20 @@ export default function Contact() {
              
           </div>
         </div>
+      </section>
+      
+      {/* Map Section */}
+      <section className="h-[400px] w-full relative bg-gray-200">
+         <iframe
+           src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=-19.436158833698798,29.81590117642376+(Head%20Office)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+           width="100%"
+           height="100%"
+           style={{ border: 0 }}
+           allowFullScreen={true}
+           loading="lazy"
+           referrerPolicy="no-referrer-when-downgrade"
+           title="Head Office Location"
+         ></iframe>
       </section>
     </div>
   );
