@@ -1,6 +1,6 @@
 import { Image } from "../components/ui/Image";
 import { motion } from "motion/react";
-import { ArrowRight, Leaf, Droplets, BookOpen, ChevronRight } from "lucide-react";
+import { ArrowRight, Leaf, Droplets, BookOpen, ChevronRight, Shield } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
@@ -78,6 +78,31 @@ export default function Home() {
               </motion.div>
            </div>
         </div>
+      </section>
+
+      {/* Trust Bar */}
+      <section className="bg-white border-b border-gray-100">
+         <div className="w-full">
+            <p className="text-center text-sm font-semibold text-gray-500 tracking-wider uppercase mb-6 pt-10 px-4">
+               Trusted by communities and supported by global partners
+            </p>
+            <div className="flex flex-col md:flex-row w-full opacity-90 hover:opacity-100 transition-opacity duration-500">
+               <div className="flex-1 w-full p-4 md:p-8 flex items-center justify-center">
+                  <img 
+                     src="/images/partner1.jpg" 
+                     alt="Partner 1" 
+                     className="w-full h-40 md:h-56 object-contain"
+                  />
+               </div>
+               <div className="flex-1 w-full p-4 md:p-8 flex items-center justify-center">
+                  <img 
+                     src="/images/partner2.png" 
+                     alt="Partner 2" 
+                     className="w-full h-40 md:h-56 object-contain"
+                  />
+               </div>
+            </div>
+         </div>
       </section>
 
       {/* Focus Areas */}
