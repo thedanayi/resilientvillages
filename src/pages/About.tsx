@@ -64,7 +64,7 @@ export default function About() {
                      <Target className="w-8 h-8" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-gray-900 mb-3">Vision</h3>
-                  <p className="text-gray-600">Thriving, self-sustaining communities free from poverty and resilient to climate change.</p>
+                  <p className="text-gray-600">Sustainable empowerment of communities to build resilient villages.</p>
                </motion.div>
                <motion.div 
                   initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
@@ -129,18 +129,86 @@ export default function About() {
              </div>
              <div className="flex flex-wrap justify-center gap-12">
                 {[
-                  { name: "Stella Gaihai Khumalo", role: "Chairperson", img: "/images/Stella Gaihai Khumalo - Chairperson.jpg" },
-                  { name: "Modester Mutero", role: "Secretary", img: "/images/Modester Mutero - Secretary.jpg" },
-                  { name: "Tambudzai Maria Mushayi", role: "Vice Secretary", img: "/images/Tambudzai Maria Mushayi - Vice Secretary.jpeg" },
-                  { name: "Rabson Mutumhe", role: "Treasurer", img: "/images/Rabson Mutumhe - Treasurer.jpg" },
-                  { name: "Anthony T Chirape", role: "Board Member", img: "/images/Anthont T Chirape - Board Member.jpeg" }
+                  { 
+                    name: "Sr Stellar Gaihai Khumalo", 
+                    role: "Board Chairperson", 
+                    img: "/images/Stella Gaihai Khumalo - Chairperson.jpg",
+                    bio: [
+                      "Masters of Science Degree in Nursing science (mental health/Psychiatric Nursing speciality)",
+                      "Bachelor of Science Honours Degree in psychology",
+                      "Diploma in Mental Health nursing",
+                      "Diploma in general nursing"
+                    ]
+                  },
+                  { 
+                    name: "Blazio Manobo", 
+                    role: "Vice Chairperson", 
+                    img: "/images/Manobo.png",
+                    bio: [
+                      "PhD Dev Studies 2019-2021 (Candidate)",
+                      "Master of Social Sciences (M&E)",
+                      "Master of Arts Development Studies",
+                      "Master of Business Administration (MBA)",
+                      "Bachelor of Social Science (Hons) M & E"
+                    ]
+                  },
+                  { 
+                    name: "Miss Mutero Modester", 
+                    role: "Secretary", 
+                    img: "/images/Modester Mutero - Secretary.jpg",
+                    bio: [
+                      "Master of Commerce in Strategic Management And Corporate Governance (MSU)",
+                      "Bachelor of Laws Honours Degree (UZ)"
+                    ]
+                  },
+                  { 
+                    name: "Mrs Mushayi Maria Tambudzai", 
+                    role: "Vice Secretary", 
+                    img: "/images/Tambudzai Maria Mushayi - Vice Secretary.jpeg",
+                    bio: [
+                      "Bachelor of Science Degree in Counseling",
+                      "Certificate in Education"
+                    ]
+                  },
+                  { 
+                    name: "Mr Mutumhe Rabson", 
+                    role: "Treasurer", 
+                    img: "/images/Rabson Mutumhe - Treasurer.jpg",
+                    bio: [
+                      "Qualified Chartered Accountant",
+                      "Masters in Business Administration (MBA)",
+                      "Chartered Institute of Management Accountants (CIMA)",
+                      "Institute of Chartered Secretaries & Administrators in Zimbabwe"
+                    ]
+                  },
+                  { 
+                    name: "Professor Johnson Masaka", 
+                    role: "Member", 
+                    img: "/images/prof masaka.jpg",
+                    bio: [
+                      "BSc Agron Hon. , MSc Soil Science:, Kuban Agrarian University, Federal Republic of Russia (1983- 1989)",
+                      "Doctor of Philosophy (DPhil), Department of Soil Science and Agricultural Engineering, Faculty of Agriculture, University of Zimbabwe (2014)"
+                    ]
+                  }
                 ].map((member, i) => (
-                  <div key={i} className="flex flex-col items-center max-w-[240px]">
-                     <div className="w-48 h-48 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-md">
-                        <Image src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
+                  <div key={i} className="flex flex-col items-center max-w-[320px] text-center bg-gray-50 p-6 rounded-3xl shadow-sm border border-gray-100">
+                     <div className="w-32 h-32 bg-gray-200 rounded-full mb-6 overflow-hidden shadow-md flex items-center justify-center text-gray-400">
+                        {member.img ? (
+                          <Image src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
+                        ) : (
+                          <Users className="w-12 h-12" />
+                        )}
                      </div>
-                     <h4 className="text-lg font-heading font-bold text-gray-900 mb-1">{member.name}</h4>
-                     <p className="text-primary-600 font-medium">{member.role}</p>
+                     <h4 className="text-xl font-heading font-bold text-gray-900 mb-1">{member.name}</h4>
+                     <p className="text-primary-600 font-bold mb-4">{member.role}</p>
+                     <ul className="text-sm text-gray-600 space-y-2 text-left">
+                       {member.bio.map((line, idx) => (
+                         <li key={idx} className="flex items-start gap-2">
+                           <span className="w-1.5 h-1.5 rounded-full bg-primary-400 mt-1.5 shrink-0" />
+                           <span>{line}</span>
+                         </li>
+                       ))}
+                     </ul>
                   </div>
                 ))}
              </div>

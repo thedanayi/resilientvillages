@@ -57,7 +57,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-primary-100 max-w-2xl mb-10 leading-relaxed"
               >
-                 We deliver high-impact programs and long-term socio-economic solutions. Every person has the right to food, health, education, and safe water to live a dignified life.
+                 Sustainable empowerment of communities to build resilient villages.
               </motion.p>
               
               <motion.div 
