@@ -195,7 +195,16 @@ export default function About() {
                     role: "Board Member",
                     img: undefined,
                     bio: [
-                      "Founder member of Family of Hope Organisation"
+                      "Founder member of Family of Hope Organisation",
+                      "Strong Advocate for Women's empowerment"
+                    ]
+                  },
+                  {
+                    name: "Anotony Murape",
+                    role: "Board Member",
+                    img: "/images/Anthont T Chirape - Board Member.jpeg",
+                    bio: [
+                      "Post Grad diploma in Auditing and Accounting - University of Cape Town"
                     ]
                   }
                 ].map((member, i) => (
