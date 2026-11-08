@@ -5,7 +5,7 @@ export interface BoardMember {
   title: string;
   bio: string;
   fullBio: string;
-  image: string;
+  image?: string;
   email?: string;
   linkedin?: string;
   qualifications: string[];
@@ -132,7 +132,6 @@ export const boardMembers: BoardMember[] = [
     title: "Women's Empowerment Trustee",
     bio: "Grassroots advocate and organization founder dedicated to gender equity, rural livelihoods, and vulnerable family protection.",
     fullBio: "Cynthia Changa is a Board Member and passionate advocate for rural women and vulnerable households. As a founder member of the Family of Hope Organisation, Cynthia brings frontline experience in mobilizing women's savings clubs, craft cooperatives, and gender-inclusive community governance.",
-    image: "/images/the plight of rural women.jpeg",
     email: "empowerment.board@resilientvillages.org",
     qualifications: [
       "Founder Member - Family of Hope Organisation",

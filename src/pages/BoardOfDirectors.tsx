@@ -3,7 +3,7 @@ import { boardMembers, BoardMember } from "../data/board";
 import { useSEO } from "../hooks/useSEO";
 import { PageHeader } from "../components/ui/PageHeader";
 import { Image } from "../components/ui/Image";
-import { Mail, Linkedin, X, Award, ShieldCheck, GraduationCap, ArrowRight } from "lucide-react";
+import { Mail, Linkedin, X, Award, ShieldCheck, GraduationCap, ArrowRight, User } from "lucide-react";
 
 export default function BoardOfDirectors() {
   useSEO({
@@ -54,11 +54,20 @@ export default function BoardOfDirectors() {
             >
               {/* Image Frame */}
               <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
+                {member.image ? (
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 text-stone-400 group-hover:bg-stone-200/70 transition-colors">
+                    <div className="w-16 h-16 rounded-full bg-stone-200 flex items-center justify-center mb-2 text-stone-400">
+                      <User className="w-8 h-8" />
+                    </div>
+                    <span className="text-xs font-medium text-stone-500">Profile Photo Pending</span>
+                  </div>
+                )}
                 <div className="absolute top-3 left-3 bg-stone-900/85 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-md shadow-sm">
                   {member.role}
                 </div>
@@ -157,11 +166,18 @@ export default function BoardOfDirectors() {
             </button>
 
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6">
-              <Image
-                src={selectedMember.image}
-                alt={selectedMember.name}
-                className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl object-cover object-top shrink-0 border border-stone-200 shadow-sm"
-              />
+              {selectedMember.image ? (
+                <Image
+                  src={selectedMember.image}
+                  alt={selectedMember.name}
+                  className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl object-cover object-top shrink-0 border border-stone-200 shadow-sm"
+                />
+              ) : (
+                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl bg-stone-100 border border-stone-200 flex flex-col items-center justify-center text-stone-400 shrink-0">
+                  <User className="w-10 h-10 mb-1 text-stone-400" />
+                  <span className="text-[10px] font-medium text-stone-500 text-center px-1">Photo Pending</span>
+                </div>
+              )}
               <div>
                 <span className="inline-block text-xs font-semibold uppercase tracking-wider text-primary-800 bg-primary-50 px-3 py-1 rounded-md mb-2">
                   {selectedMember.role}
