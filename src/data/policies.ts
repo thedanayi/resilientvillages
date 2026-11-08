@@ -34,7 +34,7 @@ export const policiesData: Record<string, PolicyDocument> = {
     summary: "Resilient Villages Zimbabwe enforces a zero-tolerance policy against any form of sexual exploitation, abuse, or harassment by staff, contractors, volunteers, or partners.",
     iconName: "ShieldAlert",
     downloadUrl: "#download-pseah-pdf",
-    reportingEmail: "safeguarding@resilientvillages.org",
+    reportingEmail: "info@resilientvillages.org",
     reportingPhone: "+263 77 123 4567",
     preamble: "Resilient Villages Zimbabwe (RVZ) is committed to maintaining a safe, respectful, and dignified environment for all community members, beneficiaries, staff, volunteers, and partner organizations. Sexual Exploitation, Abuse, and Harassment (SEAH) represent fundamental violations of human rights and a direct breach of organizational trust. RVZ maintains an absolute Zero-Tolerance stance toward SEAH in all project areas, field offices, and operational spheres.",
     sections: [
@@ -72,7 +72,7 @@ export const policiesData: Record<string, PolicyDocument> = {
           "Reports can be submitted anonymously through the following protected pathways:"
         ],
         bulletPoints: [
-          "Confidential Email: safeguarding@resilientvillages.org (monitored exclusively by the Independent Board Legal Trustee).",
+          "Confidential Email: info@resilientvillages.org (monitored exclusively by the Independent Board Legal Trustee).",
           "Toll-Free Hotline / WhatsApp: +263 77 123 4567 (24/7 confidential reporting line).",
           "Community Feedback Boxes: Sealed boxes located at all community water harvesting project sites and local leadership centers.",
           "Non-Retaliation Guarantee: RVZ guarantees strict confidentiality and absolute protection against retaliation or adverse consequences for any whistleblower reporting in good faith."
@@ -104,7 +104,7 @@ export const policiesData: Record<string, PolicyDocument> = {
     summary: "Comprehensive financial integrity guidelines prohibiting corruption, bribery, fraud, asset misuse, and money laundering across all RVZ operations.",
     iconName: "Banknote",
     downloadUrl: "#download-antifraud-pdf",
-    reportingEmail: "antifraud@resilientvillages.org",
+    reportingEmail: "info@resilientvillages.org",
     reportingPhone: "+263 77 987 6543",
     preamble: "Resilient Villages Zimbabwe operates with absolute transparency, financial integrity, and strict accountability to donors, regulatory bodies, and community partners. Funds, assets, and resources entrusted to RVZ are dedicated solely to empowering rural communities. RVZ maintains a zero-tolerance policy regarding any form of financial dishonesty, fraud, bribery, corruption, kickbacks, or money laundering.",
     sections: [
@@ -141,7 +141,7 @@ export const policiesData: Record<string, PolicyDocument> = {
           "Anyone who suspects financial wrongdoing is required to report it immediately. RVZ enforces strong legal and operational protections for whistleblowers."
         ],
         bulletPoints: [
-          "Direct Reporting: Email antifraud@resilientvillages.org or contact the Board Audit Committee Chair directly.",
+          "Direct Reporting: Email info@resilientvillages.org or contact the Board Audit Committee Chair directly.",
           "Whistleblower Anonymity: Reports may be submitted anonymously without fear of employment termination, demotion, or harassment.",
           "Asset Recovery: In instances of proven financial loss, RVZ aggressively pursues asset recovery, civil litigation, and criminal prosecution."
         ]
@@ -159,7 +159,7 @@ export const policiesData: Record<string, PolicyDocument> = {
     summary: "PVO 74/20 compliant protection framework safeguarding children and youth in rural Zimbabwe in alignment with the UN Convention on the Rights of the Child.",
     iconName: "HeartHandshake",
     downloadUrl: "#download-childprotection-pdf",
-    reportingEmail: "childprotection@resilientvillages.org",
+    reportingEmail: "info@resilientvillages.org",
     reportingPhone: "+263 77 444 3322",
     preamble: "Children are at the heart of resilient rural communities. Resilient Villages Zimbabwe recognizes its fundamental duty to protect all children (under the age of 18) from harm, physical or emotional abuse, neglect, exploitation, and violence. This policy is aligned with Zimbabwe's Private Voluntary Organisations (PVO) guidelines (PVO 74/20 compliance), the Constitution of Zimbabwe, and the UN Convention on the Rights of the Child (UNCRC).",
     sections: [
@@ -212,7 +212,7 @@ export const policiesData: Record<string, PolicyDocument> = {
     summary: "Overarching organizational preamble establishing core values of integrity, transparency, accountability, and safety for all beneficiaries and personnel.",
     iconName: "ShieldCheck",
     downloadUrl: "#download-safeguarding-pdf",
-    reportingEmail: "safeguarding@resilientvillages.org",
+    reportingEmail: "info@resilientvillages.org",
     reportingPhone: "+263 77 123 4567",
     preamble: "Resilient Villages Zimbabwe believes that every human being has the right to live free from violence, exploitation, discrimination, and abuse. Safeguarding is the responsibility of everyone at RVZ. This overarching policy binds together our organizational values of integrity, transparency, accountability, and community partnership into a unified operational standard.",
     sections: [

@@ -3,7 +3,7 @@ import { boardMembers, BoardMember } from "../data/board";
 import { useSEO } from "../hooks/useSEO";
 import { PageHeader } from "../components/ui/PageHeader";
 import { Image } from "../components/ui/Image";
-import { Mail, Linkedin, X, Award, ShieldCheck, GraduationCap, ArrowRight, User } from "lucide-react";
+import { Linkedin, X, Award, ShieldCheck, GraduationCap, ArrowRight, User } from "lucide-react";
 
 export default function BoardOfDirectors() {
   useSEO({
@@ -117,16 +117,6 @@ export default function BoardOfDirectors() {
                   </button>
 
                   <div className="flex items-center gap-2">
-                    {member.email && (
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="p-2 text-stone-500 hover:text-primary-700 hover:bg-stone-100 rounded-lg transition-colors"
-                        title={`Email ${member.name}`}
-                        aria-label={`Email ${member.name}`}
-                      >
-                        <Mail className="w-4 h-4" />
-                      </a>
-                    )}
                     {member.linkedin && (
                       <a
                         href={member.linkedin}
@@ -188,15 +178,6 @@ export default function BoardOfDirectors() {
                 <p className="text-sm font-medium text-stone-600 mt-0.5">
                   {selectedMember.title}
                 </p>
-                {selectedMember.email && (
-                  <a
-                    href={`mailto:${selectedMember.email}`}
-                    className="inline-flex items-center gap-1.5 text-xs text-primary-700 hover:underline mt-2 font-medium"
-                  >
-                    <Mail className="w-3.5 h-3.5" />
-                    {selectedMember.email}
-                  </a>
-                )}
               </div>
             </div>
 

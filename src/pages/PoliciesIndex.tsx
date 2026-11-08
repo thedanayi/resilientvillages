@@ -112,7 +112,7 @@ export default function PoliciesIndex() {
             </div>
             <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
               <a
-                href="mailto:safeguarding@resilientvillages.org"
+                href="mailto:info@resilientvillages.org"
                 className="px-5 py-3 bg-primary-600 hover:bg-primary-500 text-white text-sm font-bold rounded-xl text-center transition-colors shadow-sm"
               >
                 Email Safeguarding Officer
