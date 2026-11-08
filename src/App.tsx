@@ -15,6 +15,9 @@ import Home from "./pages/Home";
 
 // Lazy-loaded routes chunked out for performance
 const About = lazy(() => import("./pages/About"));
+const BoardOfDirectors = lazy(() => import("./pages/BoardOfDirectors"));
+const PoliciesIndex = lazy(() => import("./pages/PoliciesIndex"));
+const PolicyDetail = lazy(() => import("./pages/PolicyDetail"));
 const Programs = lazy(() => import("./pages/Programs"));
 const Projects = lazy(() => import("./pages/Projects"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
@@ -43,6 +46,11 @@ export default function App() {
             <Route index element={<Home />} />
             
             <Route path="about" element={<About />} />
+            <Route path="about/board" element={<BoardOfDirectors />} />
+            
+            <Route path="policies" element={<PoliciesIndex />} />
+            <Route path="policies/:slug" element={<PolicyDetail />} />
+            
             <Route path="programs" element={<Programs />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<ProjectDetail />} />

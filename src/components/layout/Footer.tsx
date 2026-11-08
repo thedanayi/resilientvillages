@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
+import { Mail, Phone, MapPin, ChevronRight, ShieldCheck } from "lucide-react";
 import { Button } from "../ui/Button";
 import { Image } from "../ui/Image";
 
@@ -36,9 +36,11 @@ export function Footer() {
 
           <div className="lg:col-span-2">
             <h3 className="font-heading font-semibold text-lg mb-6">Quick Links</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {[
                 { name: 'About Us', href: '/about' },
+                { name: 'Board of Directors', href: '/about/board' },
+                { name: 'Policies & Safeguarding', href: '/policies' },
                 { name: 'Our Programs', href: '/programs' },
                 { name: 'Projects in Action', href: '/projects' },
                 { name: 'Impact & Data', href: '/impact' },
@@ -73,7 +75,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-             <h3 className="font-heading font-semibold text-lg mb-6">Contact</h3>
+             <h3 className="font-heading font-semibold text-lg mb-6">Contact & Governance</h3>
              <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3 text-primary-200 text-sm">
                    <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
@@ -103,6 +105,10 @@ export function Footer() {
              <p>&copy; {currentYear} Resilient Villages Zimbabwe. All rights reserved.</p>
            </div>
            <div className="flex items-center gap-6">
+              <Link to="/policies" className="hover:text-white transition-colors flex items-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                Safeguarding Policies
+              </Link>
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
            </div>
@@ -111,5 +117,3 @@ export function Footer() {
     </footer>
   );
 }
-
-// Ensure ChevronRight is imported above if used. It's missing in my manual typing, I will add it.

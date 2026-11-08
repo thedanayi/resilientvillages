@@ -111,16 +111,14 @@ export default function Projects() {
                           </div>
                        )}
 
-                       {(project.impacts || project.objectives || project.lessonsLearned) && (
-                          <div className="mt-6 pt-6 border-t border-gray-100">
-                             <Link to={`/projects/${project.id}`} className="inline-flex items-center text-primary-600 hover:text-primary-800 font-bold group transition-colors">
-                                View Full Project Report
-                                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                             </Link>
-                          </div>
-                       )}
+                       <div className="mt-6 pt-6 border-t border-gray-100">
+                          <Link to={`/projects/${project.id}`} className="inline-flex items-center text-primary-600 hover:text-primary-800 font-bold group transition-colors">
+                             View Full Project Details
+                             <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                             </svg>
+                          </Link>
+                       </div>
                     </div>
                  </div>
                </motion.div>

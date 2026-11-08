@@ -3,7 +3,10 @@ import { ArrowLeft, Home } from "lucide-react";
 import { useSEO } from "../hooks/useSEO";
 
 export default function NotFound() {
-  useSEO("Page Not Found | Serene", "The page you are looking for does not exist.");
+  useSEO({
+    title: "Page Not Found",
+    description: "The page you are looking for does not exist."
+  });
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] px-4 md:px-6">
@@ -25,7 +28,7 @@ export default function NotFound() {
           </Link>
           <button
             onClick={() => window.history.back()}
-            className="flex items-center gap-2 px-8 py-3 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:bg-gray-50 transition-colors"
+            className="flex items-center gap-2 px-8 py-3 bg-white border border-gray-200 text-gray-700 rounded-full font-bold hover:bg-gray-50 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-5 h-5" />
             Go Back

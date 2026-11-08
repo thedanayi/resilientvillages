@@ -104,6 +104,7 @@ export const projects: Project[] = [
     intervention: "Constructed 5 large-scale rainwater harvesting weirs and rehabilitated 3 community boreholes.",
     results: "Water access reduced to under 500m. 80% reduction in waterborne disease cases at local clinics.",
     img: "/images/water-harvesting (1).jpg",
+    images: ["/images/water-harvesting (2).jpg", "/images/water-harvesting (1).jpg"],
     beforeImage: "/images/water-harvesting (2).jpg",
     afterImage: "/images/water-harvesting (1).jpg"
   }
