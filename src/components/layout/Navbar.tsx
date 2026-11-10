@@ -189,32 +189,53 @@ export function Navbar() {
           </Link>
 
           {/* Mobile About Accordion */}
-          <div className="rounded-lg overflow-hidden border border-stone-100">
+          <div className="rounded-xl overflow-hidden border border-stone-200 bg-white">
             <button
+              type="button"
               onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
               className={cn(
-                "w-full flex items-center justify-between px-4 py-2.5 text-base font-medium text-left transition-colors",
+                "w-full flex items-center justify-between px-4 py-3 text-base font-medium text-left transition-colors",
                 isAboutActive ? "bg-primary-50/70 text-primary-800 font-semibold" : "text-stone-800 hover:bg-stone-50"
               )}
+              aria-expanded={mobileAboutOpen}
             >
-              <span>About Us</span>
-              <ChevronDown className={cn("w-4 h-4 transition-transform duration-200", mobileAboutOpen && "rotate-180")} />
+              <span className="flex items-center gap-2">
+                <span>About Us</span>
+                <span className="text-xs bg-primary-100 text-primary-800 px-2 py-0.5 rounded-full font-medium">3 sections</span>
+              </span>
+              <ChevronDown className={cn("w-4 h-4 transition-transform duration-200 text-stone-500", mobileAboutOpen && "rotate-180")} />
             </button>
             {mobileAboutOpen && (
-              <div className="bg-stone-50/70 py-2 px-3 flex flex-col gap-1 border-t border-stone-100">
+              <div className="bg-stone-50/70 p-2 flex flex-col gap-1.5 border-t border-stone-200">
                 {aboutSubLinks.map((sub) => {
                   const IconComp = sub.icon;
+                  const isActive = location.pathname === sub.href;
                   return (
                     <Link
                       key={sub.href}
                       to={sub.href}
+                      onClick={() => setIsOpen(false)}
                       className={cn(
-                        "flex items-center gap-3 px-3 py-2 text-sm rounded-md transition-colors",
-                        location.pathname === sub.href ? "bg-primary-100 text-primary-800 font-medium" : "text-stone-700 hover:bg-stone-100"
+                        "flex items-start gap-3 p-3 rounded-lg transition-colors border",
+                        isActive
+                          ? "bg-white text-primary-800 border-primary-200 shadow-sm"
+                          : "bg-white/80 text-stone-800 border-stone-100 hover:bg-white hover:border-stone-200"
                       )}
                     >
-                      <IconComp className="w-4 h-4 text-primary-700" />
-                      <span>{sub.name}</span>
+                      <div className={cn(
+                        "p-2 rounded-md shrink-0 mt-0.5",
+                        isActive ? "bg-primary-100 text-primary-700" : "bg-stone-100 text-stone-600"
+                      )}>
+                        <IconComp className="w-4 h-4" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className={cn("text-sm font-semibold", isActive ? "text-primary-800" : "text-stone-900")}>
+                          {sub.name}
+                        </div>
+                        <div className="text-xs text-stone-500 mt-0.5 leading-snug">
+                          {sub.desc}
+                        </div>
+                      </div>
                     </Link>
                   );
                 })}
