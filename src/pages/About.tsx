@@ -76,7 +76,7 @@ export default function About() {
            </div>
            
            <div className="max-w-4xl mx-auto">
-              <LiteYouTube videoId="x-y2wZgB5sI" title="Resilient Villages Zimbabwe Community Impact" />
+              <LiteYouTube videoId="g_lENnNs414" title="Resilient Villages Zimbabwe Community Impact" />
            </div>
         </div>
       </section>
