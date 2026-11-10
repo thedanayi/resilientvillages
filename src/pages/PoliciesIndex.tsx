@@ -118,10 +118,10 @@ export default function PoliciesIndex() {
                 Email Safeguarding Officer
               </a>
               <a
-                href="tel:+263771234567"
+                href="tel:+263772900095"
                 className="px-5 py-3 bg-stone-800 hover:bg-stone-700 text-stone-200 text-sm font-bold rounded-xl text-center transition-colors border border-stone-700"
               >
-                Call Hotline: +263 77 123 4567
+                Call Hotline: +263 772 900 095
               </a>
             </div>
           </div>
