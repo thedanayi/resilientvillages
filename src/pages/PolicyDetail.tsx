@@ -41,7 +41,15 @@ export default function PolicyDetail() {
   const allPolicies = Object.values(policiesData);
 
   const handleDownloadPdf = () => {
-    alert(`Downloading full PDF document for ${policy.title} (${policy.code})...`);
+    if (policy.downloadUrl && policy.downloadUrl.endsWith('.pdf')) {
+      const link = document.createElement('a');
+      link.href = policy.downloadUrl;
+      link.download = `${policy.slug}-policy.pdf`;
+      link.target = "_blank";
+      link.click();
+    } else {
+      alert(`Downloading full PDF document for ${policy.title} (${policy.code})...`);
+    }
   };
 
   return (
